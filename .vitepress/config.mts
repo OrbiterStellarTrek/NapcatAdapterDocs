@@ -6,7 +6,7 @@ export default defineConfig({
   description: "一个适配器帮助文档",
   lang: "zh-CN",
   srcDir: './src',
-  head: [['link', { rel: 'icon', href: '/favicon.png' }]],
+  head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
   themeConfig: {// https://vitepress.dev/reference/default-theme-config
     footer: {
       message: '空间站「星旅」团队. 加入<a href="https://qm.qq.com/q/WuYpKfgWYw">Napcat-Adapter官方用户群</a>',
