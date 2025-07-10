@@ -4,7 +4,7 @@ GITHUB_URL=https://oauth:${PushKey}@github.com/OrbiterStellarTrek/ncadocs.github
 git clone ${GITHUB_URL} temp
 
 rm -rf temp/*
-mv .vitepress/dist/* temp
+mv /home/runner/work/NapcatAdapterDocs/NapcatAdapterDocs/.vitepress/dist/* temp
 
 cd ./temp
 
