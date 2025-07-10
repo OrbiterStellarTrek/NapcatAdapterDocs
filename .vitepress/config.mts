@@ -5,6 +5,7 @@ export default defineConfig({
   title: "NapcatAdapterDocs",
   description: "一个适配器帮助文档",
   lang: "zh-CN",
+  srcDir: './src',
   head: [['link', { rel: 'icon', href: '/assets/napcat.png' }]],
   themeConfig: {// https://vitepress.dev/reference/default-theme-config
     footer: {
