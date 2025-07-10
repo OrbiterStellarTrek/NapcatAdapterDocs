@@ -17,7 +17,7 @@ export default defineConfig({
     },
     logo: "/assets/napcat.png",
     editLink: {
-      pattern: 'https://github.com/OrbiterStellarTrek/NapcatAdapterDocs/edit/main/:path',
+      pattern: 'https://github.com/OrbiterStellarTrek/NapcatAdapterDocs/edit/main/src/:path',
       text: '在 GitHub 上编辑此页'
     },
     lastUpdated: {
