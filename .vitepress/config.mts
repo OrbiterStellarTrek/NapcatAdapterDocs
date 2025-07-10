@@ -5,20 +5,33 @@ export default defineConfig({
   title: "NapcatAdapterDocs",
   description: "一个适配器帮助文档",
   lang: "zh-CN",
-  head: [
-    [
-      'link',{ rel: 'icon', href: '/assets/napcat.png' }
-    ]
-  ],
-  themeConfig: {
+  head: [['link', { rel: 'icon', href: '/assets/napcat.png' }]],
+  themeConfig: {// https://vitepress.dev/reference/default-theme-config
     footer: {
-      message: 'Pages by <a href="https://github.com/vuejs/vitepress">Vitepress</a>.',
+      message: '空间站「星旅」团队. 加入<a href="https://qm.qq.com/q/WuYpKfgWYw">Napcat-Adapter官方用户群</a>',
       copyright: 'Copyright © 2025 <a href="https://github.com/OrbiterStellarTrek">OrbiterStellarTrek</a>'
     },
     search: {
       provider: 'local'
     },
-    // https://vitepress.dev/reference/default-theme-config
+    logo: "/assets/napcat.png",
+    editLink: {
+      pattern: 'https://github.com/OrbiterStellarTrek/NapcatAdapterDocs/edit/main/:path',
+      text: '在 GitHub 上编辑此页'
+    },
+    lastUpdated: {
+      text: '更新于',
+      formatOptions: {
+        dateStyle: 'full',
+        timeStyle: 'medium'
+      }
+    },
+    docFooter: {
+      prev: '上一个',
+      next: '下一个'
+    },
+    externalLinkIcon: true,
+
     nav: [
       { text: '主页', link: '/' },
       { text: '快速开始', link: '/get-started' },
@@ -48,5 +61,5 @@ export default defineConfig({
         detailsLabel: '💡更多'
       }
   },
-  lastUpdated: true  
+  lastUpdated: true,  
 })

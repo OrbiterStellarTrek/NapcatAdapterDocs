@@ -1,6 +1,5 @@
 ---
 
-lang: zh-CN
 layout: home
 
 hero:
