@@ -1,4 +1,4 @@
-name: Auto Build Pages
+name: 自动构建网页
 
 on:
   push:
@@ -26,17 +26,17 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-22.04
     steps:
-      - name: Checkout
+      - name: 检查
         uses: actions/checkout@v4
-      - name: Setup Node
+      - name: 设置 Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20.x'
-      - name: Install Dependencies
+      - name: 安装依赖
         run: npm install -g pnpm && pnpm i -P
-      - name: Build Pages
+      - name: 构建网页
         run: pnpm docs:build
-      - name: Push
+      - name: 推送到仓库
         env: 
           PushKey: ${{ secrets.GH_PUSH_KEY }}
         run: bash ./pushscript/push.sh

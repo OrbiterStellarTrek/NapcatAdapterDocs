@@ -1,6 +1,6 @@
 cd ..
 mkdir temp
-GITHUB_URL=https://oauth:${PushKey}@github.com/OrbiterStellarTrek/ncadocs.github.io
+GITHUB_URL=https://oauth:${PushKey}@github.com/OrbiterStellarTrek/OrbiterStellarTrek.github.io
 git clone ${GITHUB_URL} temp
 
 rm -rf temp/*
