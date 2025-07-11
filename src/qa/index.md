@@ -53,8 +53,10 @@
 
 ## 问： 嵌套转发中第二层消息打不开，显示加载失败？
 
-<img src="/assets/qiantao.png" width="30%" class="black-image">
-<img src="/assets/qiantao-white.jpg" width="30%" class="light-image">
+<div>
+  <img src="/assets/qiantao.png" width="30%" class="dark-image">
+  <img src="/assets/qiantao-white.jpg" width="30%" class="light-image">
+</div>
 
 答：在9.1.67(不含)之后的版本，QQ采用了新的聊天记录加载机制。
 
