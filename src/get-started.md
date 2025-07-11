@@ -24,7 +24,7 @@
 > Napcat Docker默认映射3001端口，如有疑问可查看容器是否映射端口
 
 ![WebUIConfig2](/assets/webconfig2.png)
-完成后记得保存并启用
+完成后记得保存！保存！并启用！
 :::
 
 :::details 你没安装Napcat？ 
@@ -55,7 +55,11 @@ pnpm install --filter=napcat-adapter
 # yarn install
 ```
 
-3. 安装本适配器后启动一次，打开插件根目录下的 `config/config/cfg.yaml`，编辑 baseUrl 地址为刚刚在 NapCat WebUI 中配置的地址（例如：ws://0.0.0.0:3000）。如果在之前配置 `WebSocket 服务器` 时输入了 token，请取消配置文件里 token 的注释，并编辑为你在 WebSocket 服务器配置的 token。（注：也可以使用锅巴配置，这样就不用去翻文件了。）
+3. 安装本适配器后启动一次，然后打开插件根目录下的 `config/config/cfg.yaml`，编辑 baseUrl 地址为刚刚在 NapCat WebUI 中配置的地址，前面加上ws://（例如：ws://0.0.0.0:3000）。
+如果在之前配置 `WebSocket 服务器` 时输入了 token，请取消配置文件里 token 的注释，并编辑为你在 WebSocket 服务器配置的 token。
+
+（注：也可以使用锅巴配置，这样就不用去翻文件了。）
+
 :::danger
 **跨设备公网WebSocket连接，请务必配置连接Token！**
 :::
@@ -66,4 +70,4 @@ pnpm install --filter=napcat-adapter
 
 4. 重启 Yunzai 后即可享用
 
-## 你可能需要[疑难解答](qa/)
+## 运行不正常？你可能需要[疑难解答](qa/)
