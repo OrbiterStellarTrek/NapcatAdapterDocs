@@ -44,7 +44,13 @@ export default defineConfig({
         text: '教程',
         items: [
           { text: '快速开始', link: '/get-started' },
-          { text: '疑难解答', link: '/qa/' }
+          {
+            text: '疑难解答',
+            items: [
+              { text: '常见问题', link: '/qa/' },
+              { text: '关于文件', link: '/qa/file' }
+            ]
+          }
         ]
       }
     ],
