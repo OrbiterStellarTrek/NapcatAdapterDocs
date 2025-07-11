@@ -52,5 +52,8 @@
 ~~（如果你会编辑JSON可以编辑config/config/botlist.json的文件）~~
 
 ## 问： 嵌套转发中第二层消息打不开，显示加载失败？
-<img src="/assets/qiantao.png" width="30%">
+<div class="image-container">
+<img src="/assets/qiantao.png" width="30%" class="black-image">
+<img src="/assets/qiantao-white.png" width="30%" class="light-image">
+</div>
 答：在9.1.67(不含)之后的版本，QQ采用了新的聊天记录加载机制，对于不是按照特定方法发送的转发消息，第二层必定打不开，icqqjs也存在该问题，需要等待Napcat.OneBot修复。

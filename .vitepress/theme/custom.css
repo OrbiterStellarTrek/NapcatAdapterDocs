@@ -1,0 +1,13 @@
+/* 默认（浅色模式）下，隐藏深色图片 */
+.dark-image {
+  display: none;
+}
+
+/* 当 html 标签有 .dark class 时（深色模式下） */
+.dark .dark-image {
+  display: block; /* 显示深色图片 */
+}
+
+.dark .light-image {
+  display: none;  /* 隐藏浅色图片 */
+}
