@@ -1,5 +1,17 @@
 # 常见问题与解答
 
+## 在一切开始之前...
+
+在你向任何人寻求帮助之前：
+
+1. 请先阅读[快速开始](../get-started.md)，并保存所有的配置文件。有可能你只是没有看全教程，或者配置没有保存导致插件读取不到配置导致错误。（有真实案例）
+
+2. 阅读下面的常见问题与解答，确保你遇到的问题没有被说明。
+
+3. 如果不能解决，请带上报错日志和报错聊天截图，确保涉及插件/Napcat-Adapter已是最新，然后提出[issue](https://gitee.com/qiannqq/napcat-adapter/issues/new/choose)或者去[官方群聊](https://qm.qq.com/q/WuYpKfgWYw)寻求帮助。
+
+![在没有错误日志的情况下诊断任何问题无异于闭眼开车](../public/assets/needrizhi.jpg)
+
 ## 关于文件
 
 :::tip
@@ -11,6 +23,17 @@
 
 
 更多请访问[关于文件](file)
+
+## 问： 适配器日志只提示初始化，没有连接（或者断断续续的连接）
+
+答：请依次检查：
+
+1. NapCat和适配器都在工作，适配器启用了一个WebSocket服务器（不是HTTP服务器）
+2. 适配器设置的地址可以匹配上NapCat WebSocket服务器配置的地址和端口
+3. 适配器的配置文件和WebSocket服务器配置是否有一方没有设置token/token不一致。
+
+（如果地址匹配上了但是还是连接不了，请检查NapCat和适配器是否在同一个网络环境，如果不是，请参阅[快速开始](../get-started.md)的NapCat的配置部分）
+
 
 ## 问： 我的插件/Bot 日志出现以下报错，怎么办？
 
@@ -24,7 +47,9 @@
 答： 若报错信息包含 “`client not online`”，请更新适配器：`#nc更新`
 
 ## 问： 如何连接多个 NapCat？   
-答： 在锅巴的插件配置中打开“多Bot”选项，然后在下方的“Bot连接列表”手动添加多个Napcat即可。~~（如果你会编辑JSON可以编辑config/config/botlist.json的文件）~~
+答： 在锅巴的插件配置中打开“多Bot”选项，然后在下方的“Bot连接列表”手动添加多个Napcat即可。
+
+~~（如果你会编辑JSON可以编辑config/config/botlist.json的文件）~~
 
 ## 问： 嵌套转发中第二层消息打不开，显示加载失败？
 <img src="/assets/qiantao.png" width="30%">

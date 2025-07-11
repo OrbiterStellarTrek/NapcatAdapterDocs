@@ -6,14 +6,16 @@
 :::details Napcat需要进行以下配置
 
 > [!danger] ⚠️危险
-> **如果你的端口6099暴露在公网中，请务必修改登录密码！**
+> **如果你的端口6099暴露在公网中，请务必修改NapCat WebUI的登录密码！**
 
 > [!warning]
 > 本适配器的工作模式为 `正向 WS 连接`，请确保 `Napcat-Adapter` 可以正常访问 `NapCat` 所提供的 IP 和端口。
 
-> 关于 WSL 的帮助请参考：[WSL Networking Documentation](https://learn.microsoft.com/zh-cn/windows/wsl/networking#identify-ip-address)
+如果两方的其中一方不在同一个网络环境，以下的链接或许能帮助你：
+
+> 关于 WSL 访问的帮助请参考：[WSL Networking Documentation](https://learn.microsoft.com/zh-cn/windows/wsl/networking#identify-ip-address)
 >
-> 关于 Docker 配置端口映射请参考：[Docker 镜像配置端口](https://www.doubao.com/thread/w76de7e1b8088ac44)
+> 关于 Docker 配置映射请参考：[Docker 镜像配置端口](https://www.doubao.com/thread/w76de7e1b8088ac44)
 
 打开浏览器，进入你的Napcat Webui（默认密钥Napcat），按照图示打开`网络配置`，新建一个`WebSocket服务器`
 ![WebUI](/assets/webconfig1.png)
@@ -53,7 +55,7 @@ pnpm install --filter=napcat-adapter
 # yarn install
 ```
 
-3. 安装本适配器后启动一次，打开插件根目录下的 `config/config/cfg.yaml`，编辑 baseUrl 地址为刚刚在 NapCat WebUI 中配置的地址（例如：ws://0.0.0.0:3000）。如果在配置 `WebSocket 服务器` 时输入了 token，请取消配置文件里 token 的注释，并编辑为你在 WebSocket 服务器配置的 token。
+3. 安装本适配器后启动一次，打开插件根目录下的 `config/config/cfg.yaml`，编辑 baseUrl 地址为刚刚在 NapCat WebUI 中配置的地址（例如：ws://0.0.0.0:3000）。如果在之前配置 `WebSocket 服务器` 时输入了 token，请取消配置文件里 token 的注释，并编辑为你在 WebSocket 服务器配置的 token。（注：也可以使用锅巴配置，这样就不用去翻文件了。）
 :::danger
 **跨设备公网WebSocket连接，请务必配置连接Token！**
 :::
