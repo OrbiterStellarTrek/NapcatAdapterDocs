@@ -1,3 +1,28 @@
+
+@font-face {
+  font-family: 'Source Han Sans'; 
+  src: url('/fonts/SourceHanSans-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Source Han Sans';
+  src: url('/fonts/SourceHanSans-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Source Han Sans';
+  src: url('/fonts/SourceHanSans-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* 默认（浅色模式）下，隐藏深色图片 */
 .dark-image {
   display: none;
