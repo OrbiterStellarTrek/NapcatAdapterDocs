@@ -23,6 +23,20 @@
   font-display: swap;
 }
 
+:root {
+  --vp-font-family-base: 'Source Han Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* 定义标题的字重 */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500; /* 让所有标题默认使用 Medium 字重 */
+}
+
+/* 为 H1 单独设置更粗的字重 */
+h1 {
+  font-weight: 700; /* H1 使用 Bold 字重 */
+}
+
 /* 默认（浅色模式）下，隐藏深色图片 */
 .dark-image {
   display: none;
