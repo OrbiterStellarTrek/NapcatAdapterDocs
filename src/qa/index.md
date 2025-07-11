@@ -10,7 +10,11 @@
 
 3. 如果不能解决，请带上报错日志和报错聊天截图，确保涉及插件/Napcat-Adapter已是最新，然后提出[issue](https://gitee.com/qiannqq/napcat-adapter/issues/new/choose)或者去[官方群聊](https://qm.qq.com/q/WuYpKfgWYw)寻求帮助。
 
-![在没有错误日志的情况下诊断任何问题无异于闭眼开车](../public/assets/needrizhi.jpg)
+> **Troubleshooting any problem without the error log is like driving with your eyes closed.**
+>
+> 在没有错误日志的情况下诊断任何问题无异于闭眼开车
+>
+> — *Apache 官方文档 Getting Started 篇章*
 
 ## 关于文件
 
