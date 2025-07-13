@@ -14,7 +14,7 @@
 
 >在提问之前，可以阅读[提问的智慧](https://lug.ustc.edu.cn/wiki/doc/smart-questions/#%E5%BD%93%E4%BD%A0%E6%8F%90%E9%97%AE%E6%97%B6)，知晓高效的提问方法。
 
-:::details【提问速通】
+:::details 【提问速通】
 如果你想获得最快最优解决方案
 请确保：
 1. 提问时请带上报错日志和报错聊天截图
