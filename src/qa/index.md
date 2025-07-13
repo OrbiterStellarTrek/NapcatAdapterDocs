@@ -8,7 +8,7 @@
 
 2. 阅读下面的常见问题与解答，确保你遇到的问题没有被说明。
 
-3. 阅读[issue](https://gitee.com/qiannqq/napcat-adapter/issues)，查看是否有人和你有同样的问题。
+3. 阅读[issue](https://gitee.com/qiannqq/napcat-adapter/issues?q=is%3Aall)，查看是否有人和你有同样的问题。
 
 4. 如果不能解决，请带上报错日志和报错聊天截图，确保涉及插件/Napcat-Adapter已是最新，然后[提出issue](https://gitee.com/qiannqq/napcat-adapter/issues/new/choose)或者去[官方群聊](https://qm.qq.com/q/WuYpKfgWYw)寻求帮助。
 
