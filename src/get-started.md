@@ -111,7 +111,7 @@ pnpm install --filter=napcat-adapter
               ```bash
               wsl --settings
               ```
-            ![WSL2设置窗口](assets/setting.png)
+            ![WSL2设置窗口](/assets/setting.png)
 
             2. 将网络模式改为 `mirrored`，然后重启WSL2系统。
 
