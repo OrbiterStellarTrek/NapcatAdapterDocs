@@ -4,13 +4,13 @@
 
 为了更快地定位并解决你的问题，请先按照如下操作进行：
 
-1. 阅读[快速开始](../get-started.md)，并保存所有的配置文件，重启Yunzai和Napcat。有可能你只是没有看全教程，或者配置没有保存导致插件读取不到配置导致错误。
+1. 阅读[快速开始](../get-started.md)，并保存所有的配置文件，重启Yunzai和Napcat再次尝试问题是否出现。有可能你只是没有看全教程，或者配置没有保存导致插件读取不到配置导致错误。
 
 2. 阅读下面的常见问题与解答，确保你遇到的问题没有被说明。
 
 3. 阅读[issue](https://gitee.com/qiannqq/napcat-adapter/issues?q=is%3Aall)，查看是否有人和你有同样的问题。
 
-4. 如果不能解决，请带上报错日志和报错聊天截图，确保涉及插件/Napcat-Adapter已是最新，然后[提出issue](https://gitee.com/qiannqq/napcat-adapter/issues/new/choose)或者去[官方群聊](https://qm.qq.com/q/WuYpKfgWYw)寻求帮助。
+4. 如果以上步骤都不能解决，请带上报错日志和报错聊天截图，确保涉及插件/Napcat-Adapter已是最新，然后[提出issue](https://gitee.com/qiannqq/napcat-adapter/issues/new/choose)或者去[官方群聊](https://qm.qq.com/q/WuYpKfgWYw)寻求帮助。
 
 :::details 【提问速通】
 如果你想获得最快最优解决方案   
@@ -49,11 +49,11 @@
 
 答：请依次检查：
 
-1. NapCat和适配器都在工作，且NapCat启用了一个WebSocket服务器（不是HTTP服务器）
-2. 适配器设置的地址可以匹配上NapCat WebSocket服务器配置的地址和端口
+1. NapCat和适配器都在工作，且NapCat启用了一个WebSocket服务器。（不是HTTP服务器）
+2. 适配器设置的地址可以匹配上NapCat WebSocket服务器配置的地址和端口。
 3. 适配器的配置文件和WebSocket服务器配置是否有一方没有设置token/token不一致。
 
-（如果地址匹配上了但是还是连接不了，请检查NapCat和适配器是否在同一个网络环境，如果不是，请参阅[快速开始](../get-started.md)的NapCat的配置部分）
+（如果地址匹配上了但是还是连接不了，请检查NapCat和适配器是否在同一个网络环境，如果不是，请参阅[快速开始](../get-started.md)配置适配器的部分）
 
 
 ## 问： 我的插件/Bot 日志出现以下报错，怎么办？

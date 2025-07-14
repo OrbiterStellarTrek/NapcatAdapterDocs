@@ -77,7 +77,7 @@ pnpm install --filter=napcat-adapter
 1.  **如果你的Yunzai和Napcat在同一个设备：**
 
       *   没有使用什么Docker（比如使用`trss.me`的安装脚本）或者WSL2的话，直接填`127.0.0.1`一般没什么问题。
-      *   如果你在Linux平台上使用了TRSS安装脚本安装Yunzai，在服务器上直接安装了Napcat：
+      *   如果你在Linux平台上使用了TRSS安装脚本安装Yunzai，同时直接安装了Napcat：
 
           此时在容器内部，`localhost` 或 `127.0.0.1` 指的是容器本身，而不是宿主机。因此不能在容器中直接使用 `127.0.0.1` 来连接Napcat。
 
@@ -94,7 +94,7 @@ pnpm install --filter=napcat-adapter
           > [!warning]
           > 地址不要照抄！！！这个地址是演示用的！实际需要根据你自己的配置进行配置！直接照抄一般用不了。
 
-      *   如果你在Win的WSL2系统使用了TRSS安装脚本安装Yunzai，直接在电脑上安装了Napcat：
+      *   如果你在Win的WSL2系统使用了TRSS安装脚本安装Yunzai，同时直接安装了Napcat：
           请直接使用`127.0.0.1`尝试，如果无法连接，请继续查看。
           *   **如果你的电脑运行 Windows 11 22H2 及更高版本**：
               1.  电脑`Win+R`，输入`%UserProfile%`
