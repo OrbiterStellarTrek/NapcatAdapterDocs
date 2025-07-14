@@ -91,7 +91,7 @@ pnpm install --filter=napcat-adapter
 
           比如原来是`ws://127.0.0.1:3939`，现在就是`ws://172.17.0.1:3939`
 
-          > [!warning]
+          > [!TIP]
           > 不要照抄这个地址！！！这个地址是演示用的！实际需要根据你自己的配置进行配置！直接照抄一般用不了！
 
       *   如果你在Win的WSL2系统使用了TRSS安装脚本安装Yunzai，同时直接安装了Napcat：
@@ -104,7 +104,18 @@ pnpm install --filter=napcat-adapter
                 [wsl2]
                 networkingMode=mirrored
                 ```
-              4.  重启WSL2系统后启动Yunzai，再次尝试连接。如果仍然无法连接，或者提示不支持镜像模式网络，请看下面的通用方法。
+              4.  重启WSL2系统后启动Yunzai，再次尝试连接。
+
+              或者：
+              1.  电脑`Win+R`，输入`cmd`回车，在弹出的命令窗口输入以下指令：
+              ```bash
+              wsl --settings
+              ```
+            ![WSL2设置窗口](assets/setting.png)
+
+            2. 将网络模式改为 `mirrored`，然后重启WSL2系统。
+
+              如果仍然无法连接，或者提示不支持镜像模式网络，请看下面的通用方法。
           *   **WSL2的通用方法**：
               1.  在WSL2系统终端执行以下指令：
                   ```bash
@@ -118,7 +129,7 @@ pnpm install --filter=napcat-adapter
 
                   比如原来是`ws://127.0.0.1:3939`，现在就是`ws://172.30.96.1:3939`
 
-                > [!warning]
+                > [!TIP]
               > 再警告一遍！地址不要照抄！！！这个地址是演示用的！实际需要根据你自己的配置进行配置！直接照抄一般用不了！
 
               更多关于WSL的配置请看[这里](https://learn.microsoft.com/zh-cn/windows/wsl/networking#identify-ip-address)
