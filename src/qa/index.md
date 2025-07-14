@@ -49,7 +49,7 @@
 
 答：请依次检查：
 
-1. NapCat和适配器都在工作，适配器启用了一个WebSocket服务器（不是HTTP服务器）
+1. NapCat和适配器都在工作，且NapCat启用了一个WebSocket服务器（不是HTTP服务器）
 2. 适配器设置的地址可以匹配上NapCat WebSocket服务器配置的地址和端口
 3. 适配器的配置文件和WebSocket服务器配置是否有一方没有设置token/token不一致。
 
