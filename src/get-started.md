@@ -73,7 +73,7 @@ pnpm install --filter=napcat-adapter
 
 （例如：ws://127.0.0.1:3001）
 
-:::details 什么，你不知道怎么配置？
+:::details 什么，你不知道怎么配置？或者连接失败？
 
 1.  **如果你的Yunzai和Napcat在同一个设备：**
 
@@ -92,12 +92,12 @@ pnpm install --filter=napcat-adapter
 
           比如原来是`ws://127.0.0.1:3939`，现在就是`ws://172.17.0.1:3939`
 
-          > [!TIP]
+          > [!warning]
           > 不要照抄这个地址！！！这个地址是演示用的！实际需要根据你自己的配置进行配置！直接照抄一般用不了！
 
       *   如果你在Linux平台上使用了Docker安装了Napcat，同时直接安装了Yunzai：
 
-          [NapCat.Docker](https://github.com/NapNeko/NapCat-Docker)Readme的启动指令已经自带了对3000，3001和6099端口映射：
+          [NapCat.Docker](https://github.com/NapNeko/NapCat-Docker) Readme的启动指令已经自带了对3000，3001和6099端口映射：
 
           >docker run -d \
           >-e NAPCAT_GID=$(id -g) \
@@ -123,6 +123,7 @@ pnpm install --filter=napcat-adapter
           ```
 
       *   如果你在Win的WSL2系统使用了TRSS安装脚本安装Yunzai，同时直接安装了Napcat：
+
           请直接使用`127.0.0.1`尝试，如果无法连接，请继续查看。
           *   **如果你的电脑运行 Windows 11 22H2 及更高版本**：
               1.  电脑`Win+R`，输入`%UserProfile%`
@@ -144,6 +145,7 @@ pnpm install --filter=napcat-adapter
             2. 将网络模式改为 `mirrored`，然后重启WSL2系统。
 
               如果仍然无法连接，或者提示不支持镜像模式网络，请看下面的通用方法。
+
           *   **WSL2的通用方法**：
               1.  在WSL2系统的终端执行以下指令：
                   ```bash
@@ -157,7 +159,7 @@ pnpm install --filter=napcat-adapter
 
                   比如原来是`ws://127.0.0.1:3939`，现在就是`ws://172.30.96.1:3939`
 
-                > [!TIP]
+                > [!warning]
               > 再警告一遍！地址不要照抄！！！这个地址是演示用的！实际需要根据你自己的配置进行配置！直接照抄一般用不了！
 
               更多关于WSL的信息请看[这里](https://learn.microsoft.com/zh-cn/windows/wsl/networking#identify-ip-address)
