@@ -16,6 +16,9 @@ Napcat Webui的默认端口是6099。
 
 例如你在Win上启动Napcat，那么访问地址一般就是127.0.0.1:6099
 
+> [!warning]
+> 注意：如果你的端口6099暴露在公网中，请务必修改登录密码！
+
 Linux云服务器请先在云服务器厂商安全组和服务器管理面板（比如宝塔）放行入方向的6099端口
 
 （为了防止端口占用可以多放行几个）
@@ -26,8 +29,6 @@ Linux云服务器请先在云服务器厂商安全组和服务器管理面板（
 ![WebUI](/assets/webconfig1.png)
 
 随后按照如图所示填写配置。
-> [!tip]
-> Napcat Docker默认映射3001端口，如有疑问可查看容器是否映射端口。
 
 ![WebUIConfig2](/assets/webconfig2.png)
 
@@ -68,9 +69,9 @@ pnpm install --filter=napcat-adapter
 
 3. 安装本适配器后启动一次，然后打开插件根目录下的 `config/config/cfg.yaml`，
 
-编辑 baseUrl 地址为刚刚在 NapCat WebUI 中配置的地址，后面加上你在Napcat指定的端口号，前面加上“ws://”。
+编辑 baseUrl 地址为127.0.0.1（一般不用改，如果连接不上请看下面的折叠部分），后面加上你在Napcat Webui指定的端口号，前面加上“ws://”。
 
-（例如：ws://0.0.0.0:3000）
+（例如：ws://127.0.0.1:3001）
 
 :::details 什么，你不知道怎么配置？
 
@@ -93,6 +94,33 @@ pnpm install --filter=napcat-adapter
 
           > [!TIP]
           > 不要照抄这个地址！！！这个地址是演示用的！实际需要根据你自己的配置进行配置！直接照抄一般用不了！
+
+      *   如果你在Linux平台上使用了Docker安装了Napcat，同时直接安装了Yunzai：
+
+          [NapCat.Docker](https://github.com/NapNeko/NapCat-Docker)Readme的启动指令已经自带了对3000，3001和6099端口映射：
+
+          >docker run -d \
+          >-e NAPCAT_GID=$(id -g) \
+          >-e NAPCAT_UID=$(id -u) \
+          >-p 3000:3000 \
+          >-p 3001:3001 \
+          >-p 6099:6099 \
+          >--name napcat \
+          >-restart=always \  
+          >mlikiowa/napcat-docker:latest
+
+          如果你是因为没有连接成功而来到这里，说明你在WebSocket服务器设置的端口可能没有映射出来（或者你没有正确配置，这里我们先不论）
+
+          解决方法：在启动指令后添加
+          ```bash
+          -p xxxx:xxxx
+          ```
+
+          其中xxxx是你在WebSocket服务器设置的端口，完成后重启Napcat容器，适配器的连接地址配置为：
+
+          ```bash
+          ws://127.0.0.1:xxxx
+          ```
 
       *   如果你在Win的WSL2系统使用了TRSS安装脚本安装Yunzai，同时直接安装了Napcat：
           请直接使用`127.0.0.1`尝试，如果无法连接，请继续查看。
@@ -117,7 +145,7 @@ pnpm install --filter=napcat-adapter
 
               如果仍然无法连接，或者提示不支持镜像模式网络，请看下面的通用方法。
           *   **WSL2的通用方法**：
-              1.  在WSL2系统终端执行以下指令：
+              1.  在WSL2系统的终端执行以下指令：
                   ```bash
                   ip route show | grep -i default | awk '{ print $3}'
                   ```
@@ -132,10 +160,9 @@ pnpm install --filter=napcat-adapter
                 > [!TIP]
               > 再警告一遍！地址不要照抄！！！这个地址是演示用的！实际需要根据你自己的配置进行配置！直接照抄一般用不了！
 
-              更多关于WSL的配置请看[这里](https://learn.microsoft.com/zh-cn/windows/wsl/networking#identify-ip-address)
+              更多关于WSL的信息请看[这里](https://learn.microsoft.com/zh-cn/windows/wsl/networking#identify-ip-address)
 
 2.  **如果你的Yunzai和Napcat不在同一个设备：**
-      请在Napcat的配置里先配置一个token！并填入后面的配置处，否则安全问题概不负责。
 
       假设部署Napcat服务器的公网地址是`114.51.xx.919`，那么在这个示例中，配置的地址即为`ws://114.51.xx.919:你选择的端口`。
 
@@ -148,11 +175,20 @@ pnpm install --filter=napcat-adapter
 :::danger
 **跨设备公网WebSocket连接，请务必配置连接Token！**
 :::
+
+ * 如果你不想使用ICQQ了：
+
+打开 Miao-Yunzai 根目录下的 config/config/bot.yaml，将 skip_login: false 改为 skip_login: true（大约在第 32 行）。
+
 :::details 如果看不懂请看这里的图文并茂
-？这种基本功都不会，干什么吃的，晚点再写这个
+没有，不知道，不知道。
+
+上面写的够详细了吧，有问题再去官方群问（）
 ![傻了吧唧的，叉出去](/assets/cd.jpg)
 :::
 
 4. 重启 Yunzai 后即可享用
 
-## 运行不正常？你可能需要[疑难解答](qa/)
+## 运行不正常？
+
+你可能需要[疑难解答](qa/)
