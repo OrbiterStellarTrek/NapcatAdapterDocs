@@ -1,8 +1,20 @@
 # 快速开始
 
 :::tip
-本项目不太适合新手使用，如果你是新手，我推荐你在[官方群](https://qm.qq.com/q/WuYpKfgWYw)求助或者直接找代搭建。
+这篇文档在笔者碰见各种神奇人物后不断修订，应该已经很详细了。
+
+如果还是看不懂，[Napcat-Adapter官方群](https://qm.qq.com/q/WuYpKfgWYw)欢迎你，但是笔者不希望你提问出文档已经包含回答的问题。
 :::
+
+:::warning
+1.分不清Miao-Yunzai和TRSS-Yunzai，正向WS和反向WS的，建议去使用TRSS-Yunzai。
+
+2.[Napcat-Adapter官方群](https://qm.qq.com/q/WuYpKfgWYw)不是Napcat的官方群，更不是Miao-Yunzai和TRSS-Yunzai的官方群。
+
+和Napcat-Adapter无关的问题请勿进入群进行提问。
+:::
+
+
 
 
 ## 事先准备
@@ -15,18 +27,18 @@
 > [!warning] ⚠️警告
 > 本适配器的工作模式为 `正向 WS 连接`，请确保 `Napcat-Adapter` 可以正常访问 `NapCat` 所提供的 IP 和端口。
 
-打开浏览器，进入你的Napcat Webui（默认密钥Napcat）
+启动Napcat，打开浏览器，进入你的Napcat Webui（默认密钥Napcat）
 
 Napcat Webui的默认端口是6099。
 
 例如你在Win上启动Napcat，那么访问地址一般就是127.0.0.1:6099
 
+（地址栏找不到在哪？请自行[百度](https://baidu.com)/[bing](https://bing.com)）
+
 > [!warning] ⚠️警告
 > 注意：如果你的端口6099暴露在公网中，请务必修改登录密码！
 
 Linux云服务器请先在云服务器厂商安全组和服务器管理面板（比如宝塔）放行入方向的6099端口
-
-（为了防止端口占用可以多放行几个）
 
 然后访问 “http://你的云服务器公网IP:6099“。
 
@@ -46,7 +58,7 @@ Linux云服务器请先在云服务器厂商安全组和服务器管理面板（
 
 （这里不推荐Yunzai和Napcat都使用容器化部署（Yunzai容器化部署的最知名例子：trss.me）可能会出现网络的桥接问题，如果出现请自行解决。）
 
-我真服了怎么还有没安装Napcat-Adapter就跑来用Napcat-Adapter的
+我真服了怎么还有没安装Napcat就跑来用Napcat-Adapter的
 ![傻了吧唧的，叉出去](/assets/cd.jpg)
 :::
 
@@ -72,7 +84,7 @@ pnpm install --filter=napcat-adapter
 # yarn install
 ```
 
-3. 安装本适配器后启动一次，然后打开插件根目录下的 `config/config/cfg.yaml`，
+3. 安装适配器后启动一次Yunzai，然后打开插件根目录下的 `config/config/cfg.yaml`，
 
 编辑 baseUrl 地址为127.0.0.1（一般不用改，如果连接不上请看下面的折叠部分），后面加上你在Napcat Webui指定的端口号，前面加上“ws://”。
 
@@ -83,9 +95,12 @@ pnpm install --filter=napcat-adapter
 1.  **如果你的Yunzai和Napcat在同一个设备：**
 
       *   没有使用什么Docker（比如使用`trss.me`的安装脚本）或者WSL2的话，直接填`127.0.0.1`一般没什么问题。
+
+          （当然没什么问题你就不会来看这里了）
+
       *   如果你在Linux平台上使用了TRSS安装脚本安装Yunzai，同时直接安装了Napcat：
 
-          此时在容器内部，`localhost` 或 `127.0.0.1` 指的是容器本身，而不是宿主机。因此不能在容器中直接使用 `127.0.0.1` 来连接Napcat。
+          TRSS安装脚本是使用容器进行安装的，所以此时在容器内部，`localhost` 或 `127.0.0.1` 指的是容器本身，而不是宿主机。因此不能在容器中直接使用 `127.0.0.1` 来连接Napcat。
 
           **解决办法**：通过容器所在网络的网关IP 来访问宿主机。默认情况下，这个网关就是宿主机在 Docker 桥接网络中的地址。
 
@@ -102,7 +117,7 @@ pnpm install --filter=napcat-adapter
 
       *   如果你在Linux平台上使用了Docker安装了Napcat，同时直接安装了Yunzai：
 
-          [NapCat.Docker](https://github.com/NapNeko/NapCat-Docker) Readme的启动指令已经自带了对3000，3001和6099端口映射：
+          [NapCat.Docker](https://github.com/NapNeko/NapCat-Docker) Readme使用的启动指令已经自带了对3000，3001和6099端口的映射：
 
           >docker run -d \
           >-e NAPCAT_GID=$(id -g) \
@@ -127,7 +142,7 @@ pnpm install --filter=napcat-adapter
           ws://127.0.0.1:xxxx
           ```
 
-      *   如果你在Win的WSL2系统使用了TRSS安装脚本安装Yunzai，同时直接安装了Napcat：
+      *   如果你在Win的WSL2系统安装了Yunzai，同时直接安装了Napcat：
 
           请直接使用`127.0.0.1`尝试，如果无法连接，请继续查看。
           *   **如果你的电脑运行 Windows 11 22H2 及更高版本**：
@@ -181,9 +196,11 @@ pnpm install --filter=napcat-adapter
 **跨设备公网WebSocket连接，请务必配置连接Token！**
 :::
 
- * 如果你不想使用ICQQ了：
+ *  如果配置完上面的适配器，不想再使用ICQQ了：
 
-打开 Miao-Yunzai 根目录下的 config/config/bot.yaml，将 skip_login: false 改为 skip_login: true（大约在第 32 行）。
+    打开 Yunzai 根目录下的 config/config/bot.yaml，将 skip_login: false 改为 skip_login: true（大约在第 32 行）。 
+
+    这里配置的作用是跳过ICQQ登录，直接使用适配器连接。
 
 4. 重启 Yunzai 后即可享用
 
@@ -193,3 +210,7 @@ pnpm install --filter=napcat-adapter
 
 还是看不懂？这边建议直接加入[官方群](https://qm.qq.com/q/WuYpKfgWYw)随后付费找人帮忙。
 <img src="/assets/fufei.jpg" width ="50%" alt="付费服务"/>
+
+不想付费？
+
+日志截图和问题（文档里没有的那种）在[issue](https://gitee.com/qiannqq/napcat-adapter/issues/new/choose)或者[官方群聊](https://qm.qq.com/q/WuYpKfgWYw)摆明白，说不定就会有怨种（划掉）好心人来帮助你也说不定呢
