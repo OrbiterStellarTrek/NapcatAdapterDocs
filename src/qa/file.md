@@ -5,49 +5,48 @@
 
 1. Docker
 
-   :::details 1Panel
-   登录面板后，点击左侧“容器”，找到当前使用的 NapCat 容器，点击“编辑”。
-   ![1Panel-1](/assets/docker-1p1.png)
-   找到目录挂载，添加一个，左侧选择本机目录（喵崽所在绝对路径），右侧容器目录填写相同路径。
-   ![1Panel-2](/assets/docker-1p2.png)
-   :::
+:::details 1Panel
+登录面板后，点击左侧“容器”，找到当前使用的 NapCat 容器，点击“编辑”。
+![1Panel-1](/assets/docker-1p1.png)
+找到目录挂载，添加一个，左侧选择本机目录（喵崽所在绝对路径），右侧容器目录填写相同路径。
+![1Panel-2](/assets/docker-1p2.png)
+:::
 
-   ::: details 宝塔面板
-   登录面板后，点击左侧“Docker”，再点击“容器”，找到当前使用的 NapCat 容器，点击“管理”。
-   ![BT-1](/assets/docker-bt1.jpg)
-   在“更多设置”中添加“挂载/映射”，选择本机目录（喵崽所在绝对路径），右侧容器目录填写相同路径。
-   ![BT-2](/assets/docker-bt2.jpg)
-   保存容器配置即可。
-   ![BT-3](/assets/docker-bt3.jpg)
-   :::
+::: details 宝塔面板
+登录面板后，点击左侧“Docker”，再点击“容器”，找到当前使用的 NapCat 容器，点击“管理”。
+![BT-1](/assets/docker-bt1.jpg)
+在“更多设置”中添加“挂载/映射”，选择本机目录（喵崽所在绝对路径），右侧容器目录填写相同路径。
+![BT-2](/assets/docker-bt2.jpg)
+保存容器配置即可。
+![BT-3](/assets/docker-bt3.jpg)
+:::
 
-   :::details 其他还在烧烤中
-   都说了还在烧烤中看不到吗？
-   ![表情](/assets/cd.jpg)
-   :::
+:::details 其他还在烧烤中
+都说了还在烧烤中看不到吗？
+![表情](/assets/cd.jpg)
+:::
 
 2. Windows
-
-   :::tip
-   一般来说，Windows 下的 Yunzai 和 NapCat.OneBot 目录一致，无需额外配置。
-   :::
+:::tip
+一般来说，Windows 下的 Yunzai 和 NapCat.OneBot 目录一致，无需额外配置。
+:::
 
 3. Android Termux
 
-    :::details tmoe Chroot 容器
+:::details tmoe Chroot 容器
 
-   此方法重启后失效，需每次重启后重新配置。
-   Chroot 仅限 Root 环境。
+此方法重启后失效，需每次重启后重新配置。
+Chroot 仅限 Root 环境。
 
-   ```bash
-   # 在 Termux 中执行，而非容器环境
-   su
-   cd /data/data/com.termux/files/home/.local/share/tmoe-linux/containers/chroot/<NapCat容器名称>/root
-   mkdir TRSS_AllBot
-   mount --bind /data/data/com.termux/files/home/.local/share/tmoe-linux/containers/chroot/<Yunzai容器名称>/root/TRSS_AllBot /data/data/com.termux/files/home/.local/share/tmoe-linux/containers/chroot/<NapCat容器名称>/root/TRSS_AllBot
-   exit
-   ```
-    :::
+```bash
+# 在 Termux 中执行，而非容器环境
+su
+cd /data/data/com.termux/files/home/.local/share/tmoe-linux/containers/chroot/<NapCat容器名称>/root
+mkdir TRSS_AllBot
+mount --bind /data/data/com.termux/files/home/.local/share/tmoe-linux/containers/chroot/<Yunzai容器名称>/root/TRSS_AllBot /data/data/com.termux/files/home/.local/share/tmoe-linux/containers/chroot/<NapCat容器名称>/root/TRSS_AllBot
+exit
+```
+:::
 
 4. **跨设备（完全不在同一设备）、WSL**
 

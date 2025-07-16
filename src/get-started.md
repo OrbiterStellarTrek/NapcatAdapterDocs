@@ -1,5 +1,10 @@
 # 快速开始
 
+:::tip
+本项目不太适合新手使用，如果你是新手，我推荐你在[官方群](https://qm.qq.com/q/WuYpKfgWYw)求助或者直接找代搭建。
+:::
+
+
 ## 事先准备
 
 1. Yunzai
@@ -7,7 +12,7 @@
 
 :::details Napcat需要进行以下配置
 
-> [!warning]
+> [!warning] ⚠️警告
 > 本适配器的工作模式为 `正向 WS 连接`，请确保 `Napcat-Adapter` 可以正常访问 `NapCat` 所提供的 IP 和端口。
 
 打开浏览器，进入你的Napcat Webui（默认密钥Napcat）
@@ -16,7 +21,7 @@ Napcat Webui的默认端口是6099。
 
 例如你在Win上启动Napcat，那么访问地址一般就是127.0.0.1:6099
 
-> [!warning]
+> [!warning] ⚠️警告
 > 注意：如果你的端口6099暴露在公网中，请务必修改登录密码！
 
 Linux云服务器请先在云服务器厂商安全组和服务器管理面板（比如宝塔）放行入方向的6099端口
@@ -92,7 +97,7 @@ pnpm install --filter=napcat-adapter
 
           比如原来是`ws://127.0.0.1:3939`，现在就是`ws://172.17.0.1:3939`
 
-          > [!warning]
+          > [!warning] ⚠️警告
           > 不要照抄这个地址！！！这个地址是演示用的！实际需要根据你自己的配置进行配置！直接照抄一般用不了！
 
       *   如果你在Linux平台上使用了Docker安装了Napcat，同时直接安装了Yunzai：
@@ -157,7 +162,7 @@ pnpm install --filter=napcat-adapter
 
                   比如原来是`ws://127.0.0.1:3939`，现在就是`ws://172.30.96.1:3939`
 
-                > [!warning]
+                > [!warning] ⚠️警告
               > 再警告一遍！地址不要照抄！！！这个地址是演示用的！实际需要根据你自己的配置进行配置！直接照抄一般用不了！
 
               更多关于WSL的信息请看[这里](https://learn.microsoft.com/zh-cn/windows/wsl/networking#identify-ip-address)
@@ -180,15 +185,11 @@ pnpm install --filter=napcat-adapter
 
 打开 Miao-Yunzai 根目录下的 config/config/bot.yaml，将 skip_login: false 改为 skip_login: true（大约在第 32 行）。
 
-:::details 如果看不懂请看这里的图文并茂
-没有，不知道，不知道。
-
-上面写的够详细了吧，有问题再去官方群问（）
-![傻了吧唧的，叉出去](/assets/cd.jpg)
-:::
-
 4. 重启 Yunzai 后即可享用
 
 ## 运行不正常？
 
 你可能需要[疑难解答](qa/)
+
+还是看不懂？这边建议直接加入[官方群](https://qm.qq.com/q/WuYpKfgWYw)随后付费找人帮忙。
+<img src="/assets/fufei.jpg" width ="50%" alt="付费服务"/>
