@@ -136,10 +136,8 @@ pnpm install --filter=napcat-adapter
               4.  重启WSL2系统后启动Yunzai，再次尝试连接。
 
               或者：
-              1.  电脑`Win+R`，输入`cmd`回车，在弹出的命令窗口输入以下指令：
-              ```bash
-              wsl --settings
-              ```
+              1.  电脑`Win+S`，搜索`WSL Setting`，打开该应用。
+
             ![WSL2设置窗口](/assets/setting.png)
 
             2. 将网络模式改为 `mirrored`，然后重启WSL2系统。
