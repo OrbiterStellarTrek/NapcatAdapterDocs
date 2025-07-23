@@ -30,22 +30,13 @@
 >
 > — *Apache 官方文档 Getting Started 篇章*
 
-## 关于文件
-
-* WebSocket 支持小文件（图片、视频、音频、文件等任何形式的数据）传输，但单帧最大为 16MB，因此文件传输大小被限制为 10MB。
-
-* 超过 10MB 的文件将调用Bot.uploadFile尝试上传并获取URL，若Bot.uploadFile不存在则直接让 NapCat 读取本地文件。
-
-* 如果有大文件传输需求，请确保 NapCat.OneBot 可以访问 Yunzai 的目录，因使用绝对路径，需让 NapCat.OneBot 访问的路径与真实路径一致。   
-
-
-更多详细请查看：[关于文件](file)
+## [关于文件](file)
 
 ## 问： 适配器日志只提示初始化，没有连接（或者断断续续的连接）
 
 答：请依次检查：
 
-1. NapCat和适配器都在工作，且NapCat启用了一个WebSocket服务器。（不是HTTP服务器）
+1. NapCat和适配器都在工作，且NapCat启用了一个WebSocket服务器。（ **不是HTTP服务器** ）
 2. 适配器设置的地址可以匹配上NapCat WebSocket服务器配置的地址和端口。
 3. 适配器的配置文件和WebSocket服务器配置是否有一方没有设置token/token不一致。
 
