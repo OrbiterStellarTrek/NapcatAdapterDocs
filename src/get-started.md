@@ -208,9 +208,9 @@ pnpm install --filter=napcat-adapter
 
 你可能需要[疑难解答](qa/)
 
-还是看不懂？这边建议直接加入[官方群](https://qm.qq.com/q/WuYpKfgWYw)随后付费找人帮忙。
-<img src="/assets/fufei.jpg" width ="50%" alt="付费服务"/>
+若你的问题不在“疑难解答”内，你可以询问AI，也可以加入[官方群聊](https://qm.qq.com/q/WuYpKfgWYw)询问，等待好心人给你解答。
 
-不想付费？
+* [DeepWiki Miao-Yunzai](https://deepwiki.com/yoimiya-kokomi/Miao-Yunzai)
+* [DeepWiki Napcat-Adapter](https://deepwiki.com/qiannqq/napcat-adapter)
 
-日志截图和问题（文档里没有的那种）在[issue](https://gitee.com/qiannqq/napcat-adapter/issues/new/choose)或者[官方群聊](https://qm.qq.com/q/WuYpKfgWYw)摆明白，说不定就会有怨种（划掉）好心人来帮助你也说不定呢
+若你确定问题是本适配器引起的，请携带你的问题详情和日志前往创建[issue](https://gitee.com/qiannqq/napcat-adapter/issues/new/choose)，等待开发者的回复
