@@ -39,7 +39,7 @@
 Chroot 仅限 Root 环境。
 
 ```bash
-# 在 Termux 中执行，而非容器环境
+# （请先修改容器名称再执行） 在 Termux 中执行，而非容器环境
 su
 cd /data/data/com.termux/files/home/.local/share/tmoe-linux/containers/chroot/<NapCat容器名称>/root
 mkdir TRSS_AllBot
@@ -54,7 +54,7 @@ exit
 部署到 NapCat 和 Yunzai 都能访问的服务器
 ```bash
 git clone https://gitee.com/qiannqq/Lain-drive.git
-# 如果要将Lain-drive作为插件安装在Yunzai中，跟随Yunzai启动，则使用以下指令
+# 如果要将Lain-drive作为插件安装在Yunzai中，跟随Yunzai启动，则使用以下指令（请手动去掉#注释）
 # git clone --depth=1 https://gitee.com/qiannqq/Lain-drive.git ./plugins/Lain-drive
 ```
 安装 Lain-drive 依赖
