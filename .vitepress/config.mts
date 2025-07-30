@@ -9,7 +9,7 @@ export default defineConfig({
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
   themeConfig: {// https://vitepress.dev/reference/default-theme-config
     footer: {
-      message: '空间站「星旅」团队. 加入<a href="https://qm.qq.com/q/WuYpKfgWYw">Napcat-Adapter官方用户群</a>\n<a href="//beian.miit.gov.cn/">沪ICP备2024094132号-8</a>',
+      message: '空间站「星旅」团队. 加入<a href="https://qm.qq.com/q/WuYpKfgWYw">Napcat-Adapter官方用户群</a><br><a href="//beian.miit.gov.cn/">沪ICP备2024094132号-8</a>',
       copyright: 'Copyright © 2025 <a href="https://github.com/OrbiterStellarTrek">OrbiterStellarTrek</a>'
     },
     search: {
