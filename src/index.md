@@ -28,6 +28,9 @@ features:
   - icon: 🚀
     title: 启动迅速
     details: 无需繁琐配置，安装即用，支持锅巴配置
+  - icon: ✅
+    title: 丰富的扩展功能
+    details: NapCat 提供了大量 OneBot 规范之外的专属 API
 
 ---
 
