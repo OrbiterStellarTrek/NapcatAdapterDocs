@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "Napcat-Adapter"
-  text: "适用于 Yunzai的 Napcat 适配器"
+  text: "适用于 Yunzai 的 Napcat 适配器"
   tagline: 旨在最大程度地兼容所有插件
   actions:
     - theme: brand
