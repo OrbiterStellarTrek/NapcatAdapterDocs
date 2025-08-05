@@ -75,3 +75,7 @@
 答： 这源于 Miao-Yunzai 的消息去重机制。该机制会将用户 QQ 号和原始消息 (raw_msg) 组合生成一个唯一标识（例如 "123456789:#帮助"），并在随后的 200 毫秒内忽略相同的标识。因此，当多个 Bot 几乎同时收到完全相同的消息时，只有最先接收到消息的 Bot 会响应，其他 Bot 会因标识重复而被过滤掉。
 
 （TRSS-Yunzai对此机制进行了改进，因此不存在该问题。）
+
+## 问： Napcat-Adapter（本适配器）可以连接其他协议端吗？比如LLOneBot、Lgr
+
+答： Napcat-Adapter（本适配器）使用node-napcat-ts作为连接Napcat的方式，并且基于Napcat进行高度兼容，因此无法连接除Napcat外的任何协议端，即便其是`OneBotv11`协议。
