@@ -2,6 +2,21 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  vite: { 
+    optimizeDeps: {
+      exclude: [ 
+        '@nolebase/vitepress-plugin-enhanced-readabilities/client', 
+        'vitepress', 
+        '@nolebase/ui', 
+      ], 
+    },
+    ssr: { 
+      noExternal: [ 
+        '@nolebase/vitepress-plugin-enhanced-readabilities', 
+        '@nolebase/ui', 
+      ], 
+    }, 
+  }, 
   title: "NapcatAdapterDocs",
   description: "一个适配器帮助文档",
   lang: "zh-CN",

@@ -26,6 +26,11 @@
   --vp-font-family-mono: 'LXGW WenKai Mono', "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
+
+.VPSocialLinks.VPNavBarSocialLinks.social-links {
+  margin-right: 0;
+}
+
 /* 设置标题的字重为 Medium (500) */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
