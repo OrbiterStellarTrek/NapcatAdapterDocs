@@ -61,15 +61,24 @@ Linux云服务器请先在云服务器厂商安全组和服务器管理面板（
 :::
 
 :::details 你没安装Napcat？ 
-[点我跳转官方文档](https://napneko.github.io/guide/install)
 
-（这里不推荐Yunzai和Napcat都使用容器化部署（Yunzai容器化部署的最知名例子：trss.me）可能会出现网络的桥接问题，如果出现请自行解决。）
+#### Windows系统安装 任选其一即可
+* [Windows 一键启动](https://napneko.github.io/guide/boot/Shell#napcat-win-%E4%B8%80%E9%94%AE%E7%89%88%E6%9C%AC)
+* [Windows 手动安装](https://napneko.github.io/guide/boot/Shell#napcat-shell-win-%E6%89%8B%E5%8A%A8%E5%90%AF%E5%8A%A8%E6%95%99%E7%A8%8B)
+* [Windows 桌面软件](https://napneko.github.io/guide/boot/Shell#napcat-windows-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7)
 
-我真服了怎么还有没安装Napcat就跑来用Napcat-Adapter的
-![傻了吧唧的，叉出去](/assets/cd.jpg)
+#### Linux系统（含WSL）安装 任选其一即可
+* [Shell安装 (无需多开的情况)](https://napneko.github.io/guide/boot/Shell#napcat-installer-linux-%E4%B8%80%E9%94%AE%E4%BD%BF%E7%94%A8%E8%84%9A%E6%9C%AC-%E6%94%AF%E6%8C%81ubuntu-20-debian-10-centos9) 
+* [Docker安装 (适合多开账号的)](https://napneko.github.io/guide/boot/Shell#napcat-docker-linux%E5%AE%B9%E5%99%A8%E5%8C%96%E9%83%A8%E7%BD%B2)
+* **如果你的电脑/服务器只支持WSL1，请使用Shell安装。WSL2无此限制**
+* 如果你的Yunzai是使用容器化部署(如trss.me)，若无多开需求请使用Shell部署，使用Docker部署Napcat需要注意网络桥接问题，如有出现（各种连接不上、连接无响应问题）请自行解决。
+
+#### 其他安装方案（含Android Termux、1Panel等）
+[Napcat - 安装方式](https://napneko.github.io/guide/boot/Shell)
+
 :::
 
-## 🔨安装
+## 🔨安装适配器
 
 1. 在你的**Yunzai**根目录下执行安装指令：
 
