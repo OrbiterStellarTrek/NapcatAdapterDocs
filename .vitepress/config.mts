@@ -47,6 +47,11 @@ export default defineConfig({
       next: '下一个'
     },
     externalLinkIcon: true,
+    outline: {
+      level: [2,4], // 显示2-4级标题
+      // level: 'deep', // 显示2-6级标题
+      label: '当前页大纲' // 文字显示
+    },
 
     nav: [
       { text: '主页', link: '/' },
