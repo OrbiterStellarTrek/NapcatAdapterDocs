@@ -68,7 +68,7 @@
 
 答：在9.1.67(不含)之后的版本，QQ采用了新的聊天记录加载机制。
 
-对于不是按照特定方法发送的转发消息，第二层必定打不开，icqqjs也存在该问题，暂无解决方案。
+对于不是按照特定方法发送的转发消息，第二层必定打不开，icqq也存在该问题，暂无解决方案。
 
 ## 问： 为什么接入多个 Bot 后，群内两个 Bot 账号通常只有一个会响应？并且响应的账号随机
 
@@ -78,4 +78,4 @@
 
 ## 问： Napcat-Adapter（本适配器）可以连接其他协议端吗？比如LLOneBot、Lgr
 
-答： Napcat-Adapter（本适配器）使用node-napcat-ts作为连接Napcat的方式，并且基于Napcat进行高度兼容，因此无法连接除Napcat外的任何协议端，即便其是`OneBotv11`协议。
+答： Napcat-Adapter（本适配器）使用node-napcat-ts作为连接Napcat的方式，并且基于Napcat进行高度兼容，因此无法连接除Napcat外的任何协议端，即便其是`OneBotv11`协议，如果你有需要，建议使用 TRSS-Yunzai 的 Onebotv11 适配器连接。

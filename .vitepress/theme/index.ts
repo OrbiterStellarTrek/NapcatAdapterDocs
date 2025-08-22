@@ -3,6 +3,7 @@ import { h } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import Confetti from "./Confetti.vue";
+import Tooltip from '../components/Tooltip.vue'
 import './custom.css'
 import { 
   NolebaseEnhancedReadabilitiesMenu, 
@@ -21,5 +22,6 @@ export default {
   },
   enhanceApp({ app, router, siteData }) {
     app.component("Confetti", Confetti);
+    app.component('Tooltip', Tooltip) // Tooltip
   }
 } satisfies Theme

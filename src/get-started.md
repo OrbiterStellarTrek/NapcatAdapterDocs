@@ -5,7 +5,7 @@
 
 如果还是看不懂，[Napcat-Adapter官方群](https://qm.qq.com/q/WuYpKfgWYw)欢迎你，但是笔者不希望你提问出文档已经包含回答的问题。
 
-又或者可以直接寻找代搭建，并把这个文档扔给TA，让TA帮你安装这个插件。
+又或者可以直接寻找代搭建，并把这个文档扔给TA，让TA帮你安装并配置这个插件。
 :::
 
 :::warning
@@ -20,7 +20,7 @@
 ## 开始之前，你需要知道
 
 1. 开发者没有耐心对每个问题一一解释详细回复
-2. 本适配器是提供给Miao-Yunzai钉子户使用
+2. 本适配器原意是提供给Miao-Yunzai钉子户所使用的
 3. TRSS-Yunzai也可以使用本适配器，但纯小白建议使用TRSS-Yunzai自带的OneBotv11适配器
 
 
@@ -29,23 +29,46 @@
 1. Yunzai
 2. Napcat
 
-:::details Napcat需要进行以下配置
+## 安装 Napcat 
 
-> [!warning] ⚠️警告
-> 本适配器的工作模式为 `正向 WS 连接`，请确保 `Napcat-Adapter` 可以正常访问 `NapCat` 所提供的 IP 和端口。
+### Windows系统安装 任选其一即可
+* [Windows 一键启动](https://napneko.github.io/guide/boot/Shell#napcat-win-%E4%B8%80%E9%94%AE%E7%89%88%E6%9C%AC)
+* [Windows 手动安装](https://napneko.github.io/guide/boot/Shell#napcat-shell-win-%E6%89%8B%E5%8A%A8%E5%90%AF%E5%8A%A8%E6%95%99%E7%A8%8B)
+* [Windows 桌面软件](https://napneko.github.io/guide/boot/Shell#napcat-windows-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7)
 
-启动Napcat，打开浏览器，进入你的Napcat Webui（默认密钥Napcat）
+### Linux系统安装 任选其一即可
+* [Shell安装 (无需多开的情况)](https://napneko.github.io/guide/boot/Shell#napcat-installer-linux-%E4%B8%80%E9%94%AE%E4%BD%BF%E7%94%A8%E8%84%9A%E6%9C%AC-%E6%94%AF%E6%8C%81ubuntu-20-debian-10-centos9) 
+* [Docker安装 (适合多开账号的)](https://napneko.github.io/guide/boot/Shell#napcat-docker-linux%E5%AE%B9%E5%99%A8%E5%8C%96%E9%83%A8%E7%BD%B2)
+* **如果你的电脑/服务器只支持WSL1，请使用Shell安装。<Tooltip>WSL2无此限制</Tooltip>**
+* 如果你的Yunzai是使用容器化部署(如trss.me)，若无多开需求请使用Shell部署，使用Docker部署Napcat需要注意网络桥接问题，如有出现（各种连接不上、连接无响应问题）请自行解决。
 
-Napcat Webui的默认端口是6099。
+### 其他安装方案（含Android Termux、1Panel等）
+[Napcat - 安装方式](https://napneko.github.io/guide/boot/Shell)
 
-例如你在Win上启动Napcat，那么访问地址一般就是127.0.0.1:6099
+## 配置 Napcat
 
-（地址栏找不到在哪？请自行[百度](https://baidu.com)/[bing](https://bing.com)）
+省流：新建一个Websocket服务器
 
-> [!warning] ⚠️警告
-> 注意：如果你的端口6099暴露在公网中，请务必修改登录密码！
+需要按照下面的步骤打开一个Websocket服务器让Adapter连接
 
-Linux云服务器请先在云服务器厂商安全组（可能叫做防火墙）和服务器管理面板（比如宝塔）放行入方向的6099端口，TCP协议
+::: warning
+本适配器的工作模式为 `正向 WS 连接` （即 Adapter 连接到 Napcat ），请确保 `Adapter` 可以正常访问 `NapCat` 所提供的 IP 和端口。
+:::
+
+启动Napcat，打开浏览器，进入你的Napcat Webui<Tooltip>默认密钥Napcat</Tooltip>
+
+Napcat Webui的默认端口是6099。<Tooltip>例如你在Win上启动Napcat，那么访问地址一般就是127.0.0.1:6099</Tooltip>
+
+::: warning
+如果你的端口6099暴露在公网中，请务必修改登录密码！
+:::
+
+Linux云服务器请先在云服务器厂商安全组<Tooltip>可能叫做防火墙</Tooltip>和服务器管理面板（比如宝塔）按照如下放行（没有则忽略）
+
+
+|动作|     备注     |  来源IP  |端口号| 协议 |
+|:--:|:------------:|:--------:|:---:|:---:|
+|允许| Napcat-WebUI | 0.0.0.0/0| 6099 | TCP |
 
 然后访问 “http://你的云服务器公网IP:6099“。（这里的公网IP不清楚可以使用命令`curl test.ipw.cn`获取）
 
@@ -53,30 +76,17 @@ Linux云服务器请先在云服务器厂商安全组（可能叫做防火墙）
 ![WebUI](/assets/webconfig1.png)
 
 随后按照如图所示填写配置。
+:::danger
+**跨设备公网WebSocket连接，请务必配置连接Token！**
+::: 
 
 ![WebUIConfig2](/assets/webconfig2.png)
 
+:::danger
+**跨设备公网WebSocket连接，请务必配置连接Token！**
+:::
+
 完成后记得**保存！保存！并启用！**
-
-:::
-
-:::details 你没安装Napcat？ 
-
-#### Windows系统安装 任选其一即可
-* [Windows 一键启动](https://napneko.github.io/guide/boot/Shell#napcat-win-%E4%B8%80%E9%94%AE%E7%89%88%E6%9C%AC)
-* [Windows 手动安装](https://napneko.github.io/guide/boot/Shell#napcat-shell-win-%E6%89%8B%E5%8A%A8%E5%90%AF%E5%8A%A8%E6%95%99%E7%A8%8B)
-* [Windows 桌面软件](https://napneko.github.io/guide/boot/Shell#napcat-windows-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7)
-
-#### Linux系统（含WSL）安装 任选其一即可
-* [Shell安装 (无需多开的情况)](https://napneko.github.io/guide/boot/Shell#napcat-installer-linux-%E4%B8%80%E9%94%AE%E4%BD%BF%E7%94%A8%E8%84%9A%E6%9C%AC-%E6%94%AF%E6%8C%81ubuntu-20-debian-10-centos9) 
-* [Docker安装 (适合多开账号的)](https://napneko.github.io/guide/boot/Shell#napcat-docker-linux%E5%AE%B9%E5%99%A8%E5%8C%96%E9%83%A8%E7%BD%B2)
-* **如果你的电脑/服务器只支持WSL1，请使用Shell安装。WSL2无此限制**
-* 如果你的Yunzai是使用容器化部署(如trss.me)，若无多开需求请使用Shell部署，使用Docker部署Napcat需要注意网络桥接问题，如有出现（各种连接不上、连接无响应问题）请自行解决。
-
-#### 其他安装方案（含Android Termux、1Panel等）
-[Napcat - 安装方式](https://napneko.github.io/guide/boot/Shell)
-
-:::
 
 ## 🔨安装适配器
 
@@ -100,9 +110,17 @@ pnpm install --filter=napcat-adapter
 # yarn install
 ```
 
-3. 安装适配器后启动一次Yunzai，然后打开插件根目录下的 `config/config/cfg.yaml`，
+3. 配置修改
 
-编辑 baseUrl 地址为127.0.0.1（一般不用改，如果连接不上请看下面的折叠部分），后面加上你在Napcat Webui指定的端口号，前面加上“ws://”。
+如果你是Shell安装的Napcat，使用默认的端口和 `0.0.0.0` 作为服务器的地址，那么直接启动即可正常使用，如果不行，请尝试下面的步骤
+
+安装适配器后启动一次Yunzai，然后
+
+（对于新手）使用锅巴配置即可
+
+（对于会翻文件的）打开插件根目录下的 `config/config/cfg.yaml`，
+
+编辑 baseUrl 地址为127.0.0.1（一般不用改，如果连接不上请看下面的折叠部分），前面加上“ws://”，后面加上你在 `Napcat Webui` 指定的端口号。
 
 （例如：ws://127.0.0.1:3001）
 
@@ -206,8 +224,6 @@ pnpm install --filter=napcat-adapter
 
 如果在之前配置 `WebSocket 服务器` 时输入了 token，请取消配置文件里 token 的注释，并编辑为你在 WebSocket 服务器配置的 token。
 
-（注：也可以使用锅巴配置，这样就不用去翻文件了。）
-
 :::danger
 **跨设备公网WebSocket连接，请务必配置连接Token！**
 :::
@@ -225,6 +241,8 @@ pnpm install --filter=napcat-adapter
 你可能需要[疑难解答](qa/)
 
 若你的问题不在“疑难解答”内，你可以询问AI，也可以加入[官方群聊](https://qm.qq.com/q/WuYpKfgWYw)询问，等待好心人给你解答。
+
+例如下面的Deepwiki：
 
 * [DeepWiki Miao-Yunzai](https://deepwiki.com/yoimiya-kokomi/Miao-Yunzai)
 * [DeepWiki Napcat-Adapter](https://deepwiki.com/qiannqq/napcat-adapter)
