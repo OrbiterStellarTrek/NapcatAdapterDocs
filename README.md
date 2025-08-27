@@ -1,7 +1,6 @@
 # NapcatAdapterDocs
 这是一个适配器的文档仓库   
-适配器原仓库：[Gitee](https://gitee.com/qiannqq/napcat-adapter)/[Github](https://github.com/qiannqq/napcat-adapter)   
-没了    
+适配器原仓库：[Gitee](https://gitee.com/qiannqq/napcat-adapter)/[Github](https://github.com/qiannqq/napcat-adapter)     
 还有[官方群](https://qm.qq.com/q/WuYpKfgWYw)   
 喵喵喵喵喵喵
 
@@ -14,19 +13,27 @@
 > 例如这样   
 > ```这是一段文本<Tooltip>这是感叹号内容，跟在“文本”两字后面<tooltip>```
 
-拉取到本地
+
+1. 拉取到本地
 ```console
 git clone --depth=1 https://github.com/OrbiterStellarTrek/NapcatAdapterDocs
 ```
 
-使用npm安装依赖（强烈推荐下面的pnpm安装）
-```console
-npm install
-```
+2. 安装依赖
 使用pnpm安装依赖
 ```console
 npm i -g pnpm
 pnpm i -P
+```
+
+3. 本地开发
+```console
+pnpm docs:dev
+```
+
+4. 构建站点
+```
+pnpm docs:build
 ```
 
 贡献请使用[PR](https://github.com/OrbiterStellarTrek/NapcatAdapterDocs/compare)
