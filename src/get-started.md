@@ -55,7 +55,7 @@
 本适配器的工作模式为 `正向 WS 连接` （即 Adapter 连接到 Napcat ），请确保 `Adapter` 可以正常访问 `NapCat` 所提供的 IP 和端口。
 :::
 
-启动Napcat，打开浏览器，进入你的Napcat Webui<Tooltip>默认密钥Napcat</Tooltip>
+启动Napcat，打开浏览器，进入你的Napcat Webui<Tooltip>默认密钥napcat</Tooltip>
 
 Napcat Webui的默认端口是6099。<Tooltip>例如你在Win上启动Napcat，那么访问地址一般就是127.0.0.1:6099</Tooltip>
 
