@@ -29,8 +29,8 @@ features:
     title: 启动迅速
     details: 无需繁琐配置，安装即用，支持锅巴配置
   - icon: ✅
-    title: 丰富的扩展功能
-    details: NapCat 提供了大量 OneBot 规范之外的专属 API，我们为 Yunzai 的调用提供了方便的接口
+    title: Miao-Yunzai 也可用上
+    details: 连接Napcat不再是TRSS-Yunzai的专利，兼容性甚至更强
 
 ---
 
