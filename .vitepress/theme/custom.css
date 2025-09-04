@@ -6,7 +6,7 @@
 
 @font-face {
 font-family: 'MesloLGS';
-src: url('/fonts/MesloLGS NF Regular.ttf') format('truetype');
+src: url('./fonts/MesloLGS NF Regular.ttf') format('truetype');
 }
 
 :root {
