@@ -13,7 +13,7 @@
     "docs:preview": "vitepress preview"
   },
   "devDependencies": {
-    "asciinema-player": "3.6.3",
+    "asciinema-player": "^3.10.0",
     "markdown-it-task-checkbox": "^1.0.6",
     "medium-zoom": "^1.1.0",
     "mermaid": "^11.10.1",
