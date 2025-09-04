@@ -1,8 +1,8 @@
-@import url('./Fonts/Nunito.css');
-@import url('./Fonts/LXGW Wenkai.css');
-@import './vp-code-group.css';
-@import './custom-block.css';
-@import './sidebarIcon.css';
+@import url('./fonts/Nunito.css');
+@import url('./fonts/LXGW Wenkai.css');
+@import './css/vp-code-group.css';
+@import './css/custom-block.css';
+@import './css/sidebarIcon.css';
 
 @font-face {
 font-family: 'MesloLGS';

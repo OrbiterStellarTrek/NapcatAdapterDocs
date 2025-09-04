@@ -73,14 +73,14 @@ Linux云服务器请先在云服务器厂商安全组<Tooltip>可能叫做防火
 然后访问 “http://你的云服务器公网IP:6099“。（这里的公网IP不清楚可以使用命令`curl test.ipw.cn`获取）
 
 按照图示打开`网络配置`，新建一个`WebSocket服务器`。
-![WebUI](/assets/webconfig1.png)
+![WebUI](/image/webconfig1.png)
 
 随后按照如图所示填写配置。
 :::danger
 **跨设备公网WebSocket连接，请务必配置连接Token！**
 ::: 
 
-![WebUIConfig2](/assets/webconfig2.png)
+![WebUIConfig2](/image/webconfig2.png)
 
 :::danger
 **跨设备公网WebSocket连接，请务必配置连接Token！**
@@ -210,7 +210,7 @@ yarn install
               或者：
               1.  电脑`Win+S`，搜索`WSL Setting`，打开该应用。
 
-            ![WSL2设置窗口](/assets/setting.png)
+            ![WSL2设置窗口](/image/setting.png)
 
             2. 将网络模式改为 `mirrored`，然后重启WSL2系统。
 

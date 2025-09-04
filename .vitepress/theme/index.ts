@@ -2,8 +2,8 @@
 import { h } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
-import Confetti from "./Confetti.vue";
-import Tooltip from '../components/Tooltip.vue'
+import Confetti from "./vue/Confetti.vue";
+import Tooltip from './vue/Tooltip.vue'
 import './custom.css'
 import { 
   NolebaseEnhancedReadabilitiesMenu, 

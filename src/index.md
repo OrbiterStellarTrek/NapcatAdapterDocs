@@ -17,7 +17,7 @@ hero:
       text: 加入官方群聊
       link: "https://qm.qq.com/q/WuYpKfgWYw"
   image:
-      src: assets/napcat.png
+      src: image/napcat.png
       alt: napcat
       
 

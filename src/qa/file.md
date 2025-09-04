@@ -9,9 +9,9 @@
 > 修改之后会重启容器，请注意数据保存！
 
 登录面板后，点击左侧“容器”，找到当前使用的 NapCat 容器，点击“编辑”。
-![1Panel-1](/assets/docker-1p1.png)
+![1Panel-1](/image/docker-1p1.png)
 找到目录挂载，添加一个，左侧选择本机目录（云崽所在绝对路径），右侧容器目录填写相同路径。
-![1Panel-2](/assets/docker-1p2.png)
+![1Panel-2](/image/docker-1p2.png)
 :::
 
 ::: details 宝塔面板
@@ -19,16 +19,16 @@
 > 修改之后会重启容器，请注意数据保存！
 
 登录面板后，点击左侧“Docker”，再点击“容器”，找到当前使用的 NapCat 容器，点击“管理”。
-![BT-1](/assets/docker-bt1.jpg)
+![BT-1](/image/docker-bt1.jpg)
 在“更多设置”中添加“挂载/映射”，选择本机目录（云崽所在绝对路径），右侧容器目录填写相同路径。
-![BT-2](/assets/docker-bt2.jpg)
+![BT-2](/image/docker-bt2.jpg)
 保存容器配置即可。
-![BT-3](/assets/docker-bt3.jpg)
+![BT-3](/image/docker-bt3.jpg)
 :::
 
 :::details 其他还在烧烤中
 都说了还在烧烤中看不到吗？
-![表情](/assets/cd.jpg)
+![表情](/image/cd.jpg)
 :::
 
 2. Windows
