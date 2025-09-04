@@ -29,3 +29,43 @@ h1, h2, h3, h4, h5, h6 {
 .dark .light-image {
   display: none;  /* 隐藏浅色图片 */
 }
+
+/* 针对VitePress的footer容器 */
+.VPFooter .container {
+  /* 确保容器有足够的宽度 */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 覆盖VitePress默认的p标签样式 */
+.VPFooter .message {
+  text-align: center; /* 让整个内容块居中 */
+  padding: 1rem 0;
+  margin: 0;
+}
+
+/* 分栏容器 */
+.footer-columns {
+  display: inline-flex; /* 关键：让容器根据内容宽度收缩 */
+  justify-content: center; /* 内容居中 */
+  align-items: flex-start;
+  gap: 4rem; /* 两栏之间的距离，可调整 */
+}
+
+/* 确保两栏左对齐 */
+.footer-column {
+  text-align: left;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .footer-columns {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center; /* 移动端居中对齐 */
+  }
+  
+  .footer-column {
+    text-align: center; /* 移动端内容居中 */
+  }
+}
