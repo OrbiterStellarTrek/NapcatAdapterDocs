@@ -14,6 +14,8 @@ import { useData, useRoute } from 'vitepress';
 import mediumZoom from 'medium-zoom';
 import { onMounted, watch, nextTick } from 'vue';
 import { NuAsciinemaPlayer } from "@nolebase/ui-asciinema";
+import { Footer } from '@theojs/lumen'
+import { Footer_Data } from './data/FooterData.ts'
 
 import "asciinema-player/dist/bundle/asciinema-player.css";
 import 'virtual:group-icons.css' //代码组样式
@@ -56,9 +58,11 @@ export default {
     );
   },
   Layout: () => {
-    return h(DefaultTheme.Layout, null, {// https://vitepress.dev/guide/extending-default-theme#layout-slots
+    // 保留原有组件的同时添加footer插槽
+    return h(DefaultTheme.Layout, null, {
       'nav-bar-content-after': () => h(NolebaseEnhancedReadabilitiesMenu),
       'nav-screen-content-after': () => h(NolebaseEnhancedReadabilitiesScreenMenu),
+      'layout-bottom': () => h(Footer, { Footer_Data })
     })
   },
   enhanceApp({ app, router, siteData }) {

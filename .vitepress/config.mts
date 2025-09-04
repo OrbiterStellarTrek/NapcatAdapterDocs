@@ -32,7 +32,7 @@ export default defineConfig({
       ], 
     }, 
   }, 
-  title: "NapcatAdapterDocs",
+  title: "NCAPDoc",
   description: "一个适配器帮助文档",
   lang: "zh-CN",
   srcDir: './src',
@@ -40,20 +40,6 @@ export default defineConfig({
     ['link', { rel: 'icon', href: '/favicon.ico' }],
   ],
   themeConfig: {// https://vitepress.dev/reference/default-theme-config
-    footer: {
-      message: `
-        <div class="footer-columns">
-          <div class="footer-column left">
-            Made by <a href="https://github.com/OrbiterStellarTrek">空间站「星旅」团队.</a><br>
-            Copyright © 2025 <a href="https://github.com/OrbiterStellarTrek">OrbiterStellarTrek</a>
-          </div>
-          <div class="footer-column right">
-            <a href="//beian.miit.gov.cn/">沪ICP备2024094132号-8</a><br>
-            加入<a href="https://qm.qq.com/q/WuYpKfgWYw">Napcat-Adapter官方用户群</a>
-          </div>
-        </div>
-      `,
-    },
     search: {
       provider: 'local'
     },
