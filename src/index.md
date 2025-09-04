@@ -8,11 +8,11 @@ hero:
   tagline: 旨在最大程度地兼容所有插件
   actions:
     - theme: brand
-      text: 快速开始
-      link: get-started
+      text: 介绍
+      link: introduction
     - theme: alt
-      text: 疑难解答
-      link: qa/index
+      text: 安装
+      link: get-started
     - theme: alt
       text: 加入官方群聊
       link: "https://qm.qq.com/q/WuYpKfgWYw"

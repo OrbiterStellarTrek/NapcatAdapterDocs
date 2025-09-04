@@ -1,19 +1,34 @@
 import { defineConfig } from 'vitepress'
+import { MermaidMarkdown, MermaidPlugin } from 'vitepress-plugin-mermaid';
+import markdownItTaskCheckbox from 'markdown-it-task-checkbox'
+import { groupIconMdPlugin, groupIconVitePlugin, localIconLoader } from 'vitepress-plugin-group-icons'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   vite: { 
+    plugins: [
+      MermaidPlugin(),
+      groupIconVitePlugin({ 
+        customIcon: {
+          github: localIconLoader(import.meta.url, '../src/public/svg/github.svg'),
+          gitee: localIconLoader(import.meta.url, '../src/public/svg/gitee.svg'),
+        },
+      })
+    ],
     optimizeDeps: {
       exclude: [ 
         '@nolebase/vitepress-plugin-enhanced-readabilities/client', 
         'vitepress', 
         '@nolebase/ui', 
-      ], 
+      ],
+      include: ['mermaid'],
     },
     ssr: { 
       noExternal: [ 
-        '@nolebase/vitepress-plugin-enhanced-readabilities', 
+        '@nolebase/vitepress-plugin-enhanced-readabilities',
+        "@nolebase/ui-asciinema", 
         '@nolebase/ui', 
+        'mermaid', 
       ], 
     }, 
   }, 
@@ -21,7 +36,9 @@ export default defineConfig({
   description: "一个适配器帮助文档",
   lang: "zh-CN",
   srcDir: './src',
-  head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
+  head: [
+    ['link', { rel: 'icon', href: '/favicon.ico' }],
+  ],
   themeConfig: {// https://vitepress.dev/reference/default-theme-config
     footer: {
       message: `
@@ -71,13 +88,24 @@ export default defineConfig({
 
     sidebar: [
       {
+        text: '文档',
+        items: [
+          { text: '介绍', link: '/introduction' }
+        ]
+      },
+      {
         text: '教程',
         items: [
-          { text: '快速开始', link: '/get-started' },
+          { text: '快速开始', link: '/get-started' }
+        ]
+      },
+      {
+        text: '有问题？',
+        items: [
+          { text: '常见问题', link: '/qa/' },
           {
             text: '疑难解答',
             items: [
-              { text: '常见问题', link: '/qa/' },
               { text: '关于文件', link: '/qa/file' }
             ]
           }
@@ -90,13 +118,18 @@ export default defineConfig({
     ]
   },
   markdown: {
-      container: {
-        tipLabel: '💡提示',
-        warningLabel: '⚠️警告',
-        dangerLabel: '❗危险',
-        infoLabel: '💡信息',
-        detailsLabel: '💡更多'
-      }
+    container: {
+      tipLabel: '提示',
+      warningLabel: '警告',
+      dangerLabel: '危险',
+      infoLabel: '信息',
+      detailsLabel: '更多'
+    },
+    config(md) {
+      md.use(MermaidMarkdown);
+      md.use(markdownItTaskCheckbox); //todo
+      md.use(groupIconMdPlugin) //代码组图标
+    },
   },
-  lastUpdated: true,  
+  lastUpdated: true,
 })

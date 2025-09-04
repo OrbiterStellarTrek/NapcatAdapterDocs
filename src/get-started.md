@@ -90,25 +90,44 @@ Linux云服务器请先在云服务器厂商安全组<Tooltip>可能叫做防火
 
 ## 🔨安装适配器
 
+点击播放直接看动画版安装过程
+
+<NuAsciinemaPlayer
+  src="asciinema/gitee-install.cast"
+  :preload="true"
+  :cols="300"
+  :rows="40"
+  :auto-play="false"
+  :controls="true"
+  :terminal-font-size="'14px'"
+  :loop="false"
+/>
+
+安装步骤：
+
 1. 在你的**Yunzai**根目录下执行安装指令：
 
-Gitee源
-``` bash
+::: code-group
+```bash [gitee]
 git clone --depth=1 https://gitee.com/qiannqq/napcat-adapter.git ./plugins/napcat-adapter
 ```
-:::tip
-如果你的网络不是很好，可以使用下面的Github源
-:::
-Github源
-``` bash
+
+```bash [github]
 git clone --depth=1 https://github.com/qiannqq/napcat-adapter.git ./plugins/napcat-adapter
 ```
+:::
+
 2. 安装依赖
-``` bash
+
+::: code-group
+```bash [pnpm]
 pnpm install --filter=napcat-adapter
-# Yunzai-Next 等使用yarn管理依赖的请使用以下指令安装依赖
-# yarn install
 ```
+
+```bash [yarn]
+yarn install
+```
+:::
 
 3. 配置修改
 
@@ -184,7 +203,6 @@ pnpm install --filter=napcat-adapter
               2.  会打开一个目录，在该目录下创建文件，名为`.wslconfig`
               3.  使用文本编辑器打开这个文件，粘贴下面代码块的内容后保存
                 ```bash
-                [wsl2]
                 networkingMode=mirrored
                 ```
               4.  重启WSL2系统后启动Yunzai，再次尝试连接。

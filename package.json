@@ -2,13 +2,23 @@
   "name": "napcatadapter-docs",
   "author": "OrbiterStellarTrek",
   "dependencies": {
+    "@nolebase/ui-asciinema": "^2.18.2",
     "@nolebase/vitepress-plugin-enhanced-readabilities": "^2.18.1",
-    "vitepress": "^1.6.3",
-    "canvas-confetti": "^1.9.3"
+    "canvas-confetti": "^1.9.3",
+    "vitepress": "^1.6.3"
   },
   "scripts": {
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "asciinema-player": "3.6.3",
+    "markdown-it-task-checkbox": "^1.0.6",
+    "medium-zoom": "^1.1.0",
+    "mermaid": "^11.10.1",
+    "vitepress-plugin-comment-with-giscus": "^1.1.15",
+    "vitepress-plugin-group-icons": "^1.6.3",
+    "vitepress-plugin-mermaid": "^2.0.17"
   }
 }
