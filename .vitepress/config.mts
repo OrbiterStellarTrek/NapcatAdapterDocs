@@ -38,6 +38,7 @@ export default defineConfig({
   srcDir: './src',
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
+    ['meta', { name: 'msvalidate.01', content: '8A4F74DD3B2D169303381C3296AA70B0' }], // Bing <meta name="msvalidate.01" content="8A4F74DD3B2D169303381C3296AA70B0" />
   ],
   themeConfig: {// https://vitepress.dev/reference/default-theme-config
     search: {
