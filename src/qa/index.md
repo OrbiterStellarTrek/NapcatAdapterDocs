@@ -4,7 +4,7 @@
 
 为了更快地定位并解决你的问题，请先按照如下操作进行：
 
-1. 阅读[快速开始](../get-started.md)，并保存所有的配置文件，确保Napcat-Adapter已是最新，重启Yunzai和Napcat再次尝试问题是否出现。有可能你只是没有看全教程，或者配置没有保存导致插件读取不到配置导致错误。
+1. 阅读[快速开始](../get-started.md)并确保自己已经按照指示操作，保存所有的配置文件，确保Napcat-Adapter已是最新，重启Yunzai和Napcat再次尝试问题是否出现。有可能你只是没有看全教程，或者配置没有保存导致插件读取不到配置导致错误。
 
 2. 阅读下面的常见问题与解答，确保你遇到的问题没有被说明。
 
@@ -16,7 +16,7 @@
 如果你想获得最快最优解决方案   
 请确保：
 1. 提问时请带上报错日志和报错聊天截图
-2. 请确保涉及插件/Napcat-Adapter已是最新（使用指令：`#nc更新`）
+2. 请确保涉及插件/Napcat/Napcat-Adapter已是最新（使用指令：`#nc更新`）
 3. 请确保提问时带上相关截图（例如访问不了请提供浏览器访问时的截图）
 4. 请确保避免无用提问（“我这个到底怎么解决？”“怎么办？”），请这样提问：“我想要xxx，但是这个功能产生了这样的报错（附上日志截图和聊天截图）”   
 ⚠️请你记住，没有任何人有义务为你免费解答
@@ -26,11 +26,17 @@
 
 > **Troubleshooting any problem without the error log is like driving with your eyes closed.**
 >
-> 在没有错误日志的情况下诊断任何问题无异于闭眼开车
+> 在没有错误日志的情况下诊断任何问题无异于闭眼开车。
 >
 > — *Apache 官方文档 Getting Started 篇章*
 
 ## [关于文件](file)
+
+## 问： Napcat安装失败/打不开/账号登录不上/访问不了Webui/Webui密码忘了
+
+答：此为Napcat方面的问题，本文档只涉及Napcat-Adapter的安装配置和Napcat方面的部分配置，没有能力也没有义务来解答此类问题。
+
+请参阅[Napcat的文档](https://napneko.github.io/)获取此方面的帮助。
 
 ## 问： 适配器日志只提示初始化，没有连接（或者断断续续的连接）
 
@@ -38,7 +44,7 @@
 
 1. NapCat和适配器都在工作，且NapCat启用了一个WebSocket服务器。（ **不是HTTP服务器** ）
 2. 适配器设置的地址可以匹配上NapCat WebSocket服务器配置的地址和端口。
-3. 适配器的配置文件和WebSocket服务器配置是否有一方没有设置token/token不一致。
+3. 适配器的配置文件和WebSocket服务器配置是否有一方设置token不一致。
 
 （如果地址匹配上了但是还是连接不了，请检查NapCat和适配器是否在同一个网络环境，如果不是，请参阅[快速开始](../get-started)配置适配器的部分）
 
@@ -76,6 +82,6 @@
 
 （TRSS-Yunzai对此机制进行了改进，因此不存在该问题。）
 
-## 问： Napcat-Adapter（本适配器）可以连接其他协议端吗？比如LLOneBot、Lgr
+## 问： Napcat-Adapter（本适配器）可以连接其他协议端吗？比如LLOneBot、Lgr（拉格兰）
 
-答： Napcat-Adapter（本适配器）使用node-napcat-ts作为连接Napcat的方式，并且基于Napcat进行高度兼容，因此无法连接除Napcat外的任何协议端，即便其是`OneBotv11`协议，如果你有需要，建议使用 TRSS-Yunzai 的 Onebotv11 适配器连接。
+答： Napcat-Adapter（本适配器）使用node-napcat-ts作为连接Napcat的方式，并且基于Napcat进行高度兼容，因此无法连接除Napcat外的任何协议端，即便其同为`OneBotv11`协议，如果你有需要，建议使用 TRSS-Yunzai 并使用其 Onebotv11 适配器连接。
