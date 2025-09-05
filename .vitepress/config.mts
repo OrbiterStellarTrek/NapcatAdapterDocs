@@ -118,5 +118,11 @@ export default defineConfig({
       md.use(groupIconMdPlugin) //代码组图标
     },
   },
+  sitemap: {
+    hostname: 'https://ncadoc.yilx.cc/',
+    transformItems(items) {
+      return items.filter((item) => !item.url.includes('migration'))
+    }
+  },
   lastUpdated: true,
 })
