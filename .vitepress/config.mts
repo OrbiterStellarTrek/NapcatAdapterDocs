@@ -119,7 +119,7 @@ export default defineConfig({
     },
   },
   sitemap: {
-    hostname: 'https://ncadoc.yilx.cc/',
+    hostname: 'https://nca.yilx.cc/',
     transformItems(items) {
       return items.filter((item) => !item.url.includes('migration'))
     }
