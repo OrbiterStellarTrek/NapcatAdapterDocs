@@ -21,7 +21,6 @@
 | Miao-Yunzai（推荐使用）      |   ✅   |
 | TRSS-Yunzai                 |   ✅   |
 | Yunzai-Next                 |   ✅   |
-| Yunzai-Bot                  |   ✅   |
 | 理论上支持 V3 插件的 Yunzai  |  ✅\*  |
 
 ### 功能支持
