@@ -82,7 +82,6 @@ curl -o "./plugins/example/大文件上传.js" "https://gitee.com/qiannqq/yunzai
 pnpm i node-fetch -w
 ```
 
-:::
 
 ## Other 其他方案
 :::warning
