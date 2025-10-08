@@ -100,8 +100,8 @@ pnpm i node-fetch -w
 ```javascript
 /**
  * 标准化文件消息
-    * @param file
-    */
+ * @param file
+ */
 async getFile(file) {
     if(this.isLocalPath(file) || Buffer.isBuffer(file)) {
         try {
