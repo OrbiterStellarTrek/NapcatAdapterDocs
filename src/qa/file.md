@@ -53,7 +53,6 @@ mkdir TRSS_AllBot
 mount --bind /data/data/com.termux/files/home/.local/share/tmoe-linux/containers/chroot/<Yunzai容器名称>/root/TRSS_AllBot /data/data/com.termux/files/home/.local/share/tmoe-linux/containers/chroot/<NapCat容器名称>/root/TRSS_AllBot
 exit
 ```
-:::
 
 ## 对于 完全不在同一设备/WSL
 
@@ -81,10 +80,14 @@ curl -o "./plugins/example/大文件上传.js" "https://gitee.com/qiannqq/yunzai
 ```bash
 pnpm i node-fetch -w
 ```
+
 :::
 
 ## Other 其他方案
-:::details 此方案仅适用于有代码功底或会熟练运用AI写代码的用户
+:::warning
+此方案仅适用于有代码功底或会熟练运用AI写代码的用户
+:::
+
 * 为了实现大文件发送，我给Bot添加了一个uploadFile的函数<br>
 * 在文件超过10MB大小时，适配器便会判断Bot.uploadFile这个函数是否存在<br>
 * 如果存在，适配器则会尝试调用Bot.uploadFile，向其传入文件的Buffer数据，获取Bot.uploadFile返回的参数<br>
@@ -93,6 +96,7 @@ pnpm i node-fetch -w
 * Bot.uploadFile可以参考 [uploadFile.js](https://gitee.com/qiannqq/yunzai-plugin-JS/raw/master/JS/uploadFile.js)
 
 ### 以下是适配器处理文件的部分代码，位于`./lib/utils/common.js`，nccommon类中
+
 ```javascript
 /**
  * 标准化文件消息
