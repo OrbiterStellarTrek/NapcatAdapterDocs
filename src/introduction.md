@@ -19,7 +19,6 @@
 |       Yunzai 版本           | 兼容情况 |
 | --------------------------- | ------- |
 | Miao-Yunzai（推荐使用）      |   ✅   |
-| Elia-Yunzai                 |   ✅   |
 | TRSS-Yunzai                 |   ✅   |
 | Yunzai-Next                 |   ✅   |
 | Yunzai-Bot                  |   ✅   |
