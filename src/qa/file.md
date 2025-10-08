@@ -83,7 +83,7 @@ pnpm i node-fetch -w
 ```
 :::
 
-5. Other 其他方案
+## Other 其他方案
 :::details 此方案仅适用于有代码功底或会熟练运用AI写代码的用户
 * 为了实现大文件发送，我给Bot添加了一个uploadFile的函数<br>
 * 在文件超过10MB大小时，适配器便会判断Bot.uploadFile这个函数是否存在<br>
