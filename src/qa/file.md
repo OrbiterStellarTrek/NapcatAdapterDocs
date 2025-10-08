@@ -3,6 +3,8 @@
 * WebSocket 支持小文件（图片、视频、音频、文件等任何形式的数据）传输，但单帧最大为 16MB，因此文件传输大小被限制为 10MB。超过 10MB 的文件将调用Bot.uploadFile尝试上传并获取URL，若Bot.uploadFile不存在则直接让 NapCat 读取本地文件。
 * 如果有大文件传输需求，请确保 NapCat.OneBot 可以访问 Yunzai 的目录，因使用绝对路径，需让 NapCat.OneBot 访问的路径与真实路径一致。   
 
+## 对于在同一个设备上的
+
 1. Docker
 
 :::details 1Panel
@@ -53,9 +55,8 @@ exit
 ```
 :::
 
-4. **跨设备（完全不在同一设备）、WSL**
+## 对于 完全不在同一设备/WSL
 
-:::details 点击展开
 部署到 NapCat 和 Yunzai 都能访问的服务器
 ```bash
 git clone https://gitee.com/qiannqq/Lain-drive.git
@@ -91,7 +92,7 @@ pnpm i node-fetch -w
 * 所以，你可以通过自定义Bot.uploadFile函数，让其使用其他的文件服务器，比如阿里云的OSS对象存储<br>
 * Bot.uploadFile可以参考 [uploadFile.js](https://gitee.com/qiannqq/yunzai-plugin-JS/raw/master/JS/uploadFile.js)
 
-#### 以下是适配器处理文件的部分代码，位于`./lib/utils/common.js`，nccommon类中
+### 以下是适配器处理文件的部分代码，位于`./lib/utils/common.js`，nccommon类中
 ```javascript
 /**
  * 标准化文件消息
@@ -129,4 +130,3 @@ async getFile(file) {
     }
 }
 ```
-:::
