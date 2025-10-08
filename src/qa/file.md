@@ -53,6 +53,7 @@ mkdir TRSS_AllBot
 mount --bind /data/data/com.termux/files/home/.local/share/tmoe-linux/containers/chroot/<Yunzai容器名称>/root/TRSS_AllBot /data/data/com.termux/files/home/.local/share/tmoe-linux/containers/chroot/<NapCat容器名称>/root/TRSS_AllBot
 exit
 ```
+:::
 
 ## 对于 完全不在同一设备/WSL
 
