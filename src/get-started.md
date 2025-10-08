@@ -270,6 +270,10 @@ accessToken:"你实际的Token"
 **跨设备公网WebSocket连接，请务必配置连接Token！**
 :::
 
+::tip
+如果你会配置局域网/组网，那么这是您的首选，因为更安全
+:::
+
  *  如果配置完上面的适配器，不想再使用ICQQ了：
 
     打开 Yunzai 根目录下的 config/config/bot.yaml，将 skip_login: false 改为 skip_login: true（大约在第 32 行）。 
