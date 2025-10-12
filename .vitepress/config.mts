@@ -69,7 +69,7 @@ export default defineConfig({
 
     nav: [
       { text: '主页', link: '/' },
-      { text: '安装', link: '/install' },
+      { text: '安装与配置', link: '/install' },
       { text: '疑难解答', link: '/qa' }
     ],
 
@@ -83,7 +83,7 @@ export default defineConfig({
       {
         text: '教程',
         items: [
-          { text: '安装', link: '/install' }
+          { text: '安装与配置', link: '/install' }
         ]
       },
       {

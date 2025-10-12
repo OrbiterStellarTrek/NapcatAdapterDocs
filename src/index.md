@@ -11,7 +11,7 @@ hero:
       text: 介绍
       link: introduction
     - theme: alt
-      text: 安装
+      text: 安装与配置
       link: install
     - theme: alt
       text: 加入官方群聊
