@@ -12,6 +12,8 @@
 开发者没有耐心对每个问题一一解释详细回复，所以本文档已经包含回答的问题没人回概不负责。
 
 又或者可以直接寻找代搭建，并把这个文档扔给TA，让TA帮你安装并配置这个插件。
+
+亦或是把这个文档扔给AI，让AI一步一步教你怎么弄。
 :::
 
 :::warning
@@ -30,14 +32,19 @@
 ## 安装 Napcat 
 
 ### Windows系统安装 任选其一即可
+
 * [Windows 一键启动](https://napneko.github.io/guide/boot/Shell#napcat-win-%E4%B8%80%E9%94%AE%E7%89%88%E6%9C%AC) <Badge type="tip" text="推荐" />
+
 * [Windows 手动安装](https://napneko.github.io/guide/boot/Shell#napcat-shell-win-%E6%89%8B%E5%8A%A8%E5%90%AF%E5%8A%A8%E6%95%99%E7%A8%8B)
+
 * [Windows 桌面软件](https://napneko.github.io/guide/boot/Shell#napcat-windows-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7)
 
 ### Linux系统安装 任选其一即可 <Badge type="tip" text="推荐" />
-* [Shell安装 (无需多开的情况)](https://napneko.github.io/guide/boot/Shell#napcat-installer-linux-%E4%B8%80%E9%94%AE%E4%BD%BF%E7%94%A8%E8%84%9A%E6%9C%AC-%E6%94%AF%E6%8C%81ubuntu-20-debian-10-centos9) 
-* [Docker安装 (适合多开账号的)](https://napneko.github.io/guide/boot/Shell#napcat-docker-linux%E5%AE%B9%E5%99%A8%E5%8C%96%E9%83%A8%E7%BD%B2)
-* **如果你的电脑/服务器只支持WSL1，请使用Shell安装。<Tooltip>WSL2无此限制</Tooltip>**
+
+* [Shell安装](https://napneko.github.io/guide/boot/Shell#napcat-installer-linux-%E4%B8%80%E9%94%AE%E4%BD%BF%E7%94%A8%E8%84%9A%E6%9C%AC-%E6%94%AF%E6%8C%81ubuntu-20-debian-10-centos9) <Badge type="info" text="无需多开的情况" />
+* [Docker安装](https://napneko.github.io/guide/boot/Shell#napcat-docker-linux%E5%AE%B9%E5%99%A8%E5%8C%96%E9%83%A8%E7%BD%B2) <Badge type="info" text="适合多开账号的" />
+
+**如果你的电脑/服务器只支持WSL1，请使用Shell安装。<Tooltip>WSL2无此限制</Tooltip>**
 * 如果你的Yunzai是使用容器化部署(如trss.me)，若无多开需求请使用Shell部署，使用Docker部署Napcat需要注意网络桥接问题，如有出现问题（比如各种连接不上、连接无响应）请自行解决。
 
 ### 其他安装方案（含Android Termux、1Panel等）
@@ -54,8 +61,6 @@
 
 如确需跨设备公开 WebSocket 接口，请务必设置 Token，以避免账号被他人恶意利用。
 :::
-
-省流：新建一个Websocket服务器
 
 首先需要按照下面的步骤打开一个Websocket服务器让Adapter连接。
 
@@ -78,7 +83,8 @@ Linux云服务器请先在云服务器厂商安全组<Tooltip>可能叫做防火
 |:--:|:------------:|:--------:|:---:|:---:|
 |允许| Napcat-WebUI | 0.0.0.0/0| 6099 | TCP |
 
-然后访问 “http://你的云服务器公网IP:6099“。（这里的公网IP不清楚可以使用命令`curl test.ipw.cn`获取）
+然后访问 `http://你的云服务器公网IP:6099` <br>
+（这里的公网IP不清楚可以使用命令`curl test.ipw.cn`获取）
 
 按照图示打开`网络配置`，新建一个`WebSocket服务器`。
 ![WebUI](/image/webconfig1.png)
@@ -96,7 +102,7 @@ Linux云服务器请先在云服务器厂商安全组<Tooltip>可能叫做防火
 
 完成后记得**保存！保存！并启用！**
 
-## 🔨安装适配器
+## 安装适配器
 
 点击播放直接看动画版安装过程
 
@@ -107,7 +113,7 @@ Linux云服务器请先在云服务器厂商安全组<Tooltip>可能叫做防火
   :rows="40"
   :auto-play="false"
   :controls="true"
-  :terminal-font-size="'14px'"
+  :terminal-font-size="'10px'"
   :loop="false"
 />
 
@@ -143,108 +149,119 @@ yarn install
 
 安装适配器后启动一次Yunzai，然后
 
-（对于新手/会翻文件不会改文件的）使用锅巴配置即可
+::: code-group
+```console [对于新手/不会改文件的]
+使用锅巴配置即可
+```
 
-（对于会翻文件并改文件的）打开插件根目录下的 `config/config/cfg.yaml`，
+```bash [对于会翻文件并改文件的]
+打开插件根目录下的 `config/config/cfg.yaml`
 
-编辑 baseUrl 地址为127.0.0.1（一般不用改，如果连接不上请看下面的折叠部分），前面加上“ws://”，后面加上你在 `Napcat Webui` 指定的端口号。
+编辑 baseUrl 地址为127.0.0.1（一般不用改，如果连接不上请看下面的折叠部分）
+前面加上“ws://”，后面加上你在 `Napcat Webui` 指定的端口号。
 
-（例如：ws://127.0.0.1:3001）
+# ws地址
+baseUrl: "ws://127.0.0.1:3001" # << 修改这里
+:::
 
-:::details 什么，你不知道怎么配置？或者连接失败？
+:::details 什么，你不知道怎么配置？或者连接失败
 
 1.  **如果你的Yunzai和Napcat在同一个设备：**
 
-      *   没有使用什么Docker（比如使用`trss.me`的安装脚本）或者WSL2的话，直接填`127.0.0.1`一般就可以了。
+* 没有使用什么Docker（比如使用`trss.me`的安装脚本）或者WSL2的话，直接填`127.0.0.1`一般就可以了。
 
-          （当然没什么问题你就不会来看这里了）
+（当然没什么问题你就不会来看这里了）
 
-      *   如果你在Linux平台上使用了TRSS安装脚本安装Yunzai，同时直接安装了Napcat：
+* 如果你在Linux平台上使用了TRSS安装脚本安装Yunzai，同时直接安装了Napcat：
 
-          TRSS 安装脚本使用容器部署，因此在容器内部，`localhost` 或 `127.0.0.1` 指向的是容器自身，无法用于访问宿主机上运行的服务。因此不能在容器中直接使用 `127.0.0.1` 来连接Napcat。
+TRSS 安装脚本使用容器部署，因此在容器内部，`localhost` 或 `127.0.0.1` 指向的是容器自身，无法用于访问宿主机上运行的服务。因此不能在容器中直接使用 `127.0.0.1` 来连接Napcat。
 
-          **解决办法**：
-          *   使用`host.docker.internal`
-              将原先的 `127.0.0.1` 改为 `host.docker.internal`，该方法理论上支持Linux Docker（v20.10+）环境，但未经测试。
-          
-          *   通过容器网络网关来访问宿主机。默认情况下，这个网关就是宿主机在 Docker 桥接网络中的地址。
+**解决办法**：
 
-              首先找到容器所连接的网络的网关 IP，在终端输入：
-              ```bash
-              docker network inspect bridge
-              ```
-              一般地，该指令会输出一个JSON，在输出的 JSON 中，找到 `"Gateway"` 字段，其值通常是 `172.17.0.1`，这个就是你应该配置的地址。
+* 使用`host.docker.internal`
+  将原先的 `127.0.0.1` 改为 `host.docker.internal`，该方法理论上支持Linux Docker（v20.10+）环境，但未经测试。
+    
+* 通过容器网络网关来访问宿主机。默认情况下，这个网关就是宿主机在 Docker 桥接网络中的地址。
 
-              比如原来是`ws://127.0.0.1:3939`，现在就是`ws://172.17.0.1:3939`
+首先找到容器所连接的网络的网关 IP，在终端输入：
+```bash
+docker network inspect bridge
+```
+一般地，该指令会输出一个JSON，在输出的 JSON 中，找到 `"Gateway"` 字段，其值通常是 `172.17.0.1`，这个就是你应该配置的地址。
 
-              > [!warning]
-              > 不要照抄这个地址！！！这个地址是演示用的！实际需要根据你自己的配置进行配置！直接照抄一般用不了！
+比如原来是`ws://127.0.0.1:3939`，现在就是`ws://172.17.0.1:3939`
 
-      *   如果你在Linux平台上使用了Docker安装了Napcat，同时直接安装了Yunzai：
+> [!warning]
+> 不要照抄这个地址！！！这个地址是演示用的！实际需要根据你自己的配置进行配置！直接照抄一般用不了！
 
-          适配器[NapCat.Docker](https://github.com/NapNeko/NapCat-Docker) Readme使用的启动指令已经自带了对3000，3001和6099端口的映射：
+* 如果你在Linux平台上使用了Docker安装了Napcat，同时直接安装了Yunzai：
 
-          >docker run -d \
-          >-e NAPCAT_GID=$(id -g) \
-          >-e NAPCAT_UID=$(id -u) \
-          >-p 3000:3000 \
-          >-p 3001:3001 \
-          >-p 6099:6099 \
-          >--name napcat \
-          >-restart=always \  
-          >mlikiowa/napcat-docker:latest
+适配器[NapCat.Docker](https://github.com/NapNeko/NapCat-Docker) Readme使用的启动指令已经自带了对3000，3001和6099端口的映射：
 
-          如果你是因为没有连接成功而来到这里，说明你在WebSocket服务器设置的端口可能没有映射出来。（或者你没有正确配置，这里我们先不论）
+```console
+docker run -d \
+-e NAPCAT_GID=$(id -g) \
+-e NAPCAT_UID=$(id -u) \
+-p 3000:3000 \
+-p 3001:3001 \
+-p 6099:6099 \
+--name napcat \
+-restart=always \  
+mlikiowa/napcat-docker:latest
+```
 
-          解决方法：在上述Docker启动指令后添加：
-          ```bash
-          -p xxxx:xxxx
-          ```
+如果你是因为没有连接成功而来到这里，说明你在WebSocket服务器设置的端口可能没有映射出来。（或者你没有正确配置，这里我们先不论）
 
-          其中xxxx是你在WebSocket服务器设置的端口，完成后重启Napcat容器，适配器的连接地址配置为：
+解决方法：在上述Docker启动指令后添加：
+```bash
+-p xxxx:xxxx
+```
 
-          ```bash
-          ws://127.0.0.1:xxxx
-          ```
+其中xxxx是你在WebSocket服务器设置的端口，完成后重启Napcat容器，适配器的连接地址配置为：
 
-      *   如果你在Win的WSL2系统安装了Yunzai，同时直接安装了Napcat：
+```yaml
+ws://127.0.0.1:xxxx
+```
 
-          请先直接使用`127.0.0.1`尝试，如果无法连接，请继续查看。
-          *   **如果你的电脑运行 Windows 11 22H2 及更高版本**：
-              1.  电脑`Win+R`，输入`%UserProfile%`
-              2.  会打开一个目录，在该目录下创建文件，名为`.wslconfig`
-              3.  使用文本编辑器打开这个文件，粘贴下面代码块的内容后保存
-                ```bash
-                networkingMode=mirrored
-                ```
-              4.  重启WSL2系统后启动Yunzai，再次尝试连接。
+*   如果你在Win的WSL2系统安装了Yunzai，同时直接安装了Napcat：
 
-              或者：
-              1.  电脑`Win+S`，搜索`WSL Setting`，打开该应用。
+请先直接使用`127.0.0.1`尝试，如果无法连接，请继续查看。
+*   **如果你的电脑运行 Windows 11 22H2 及更高版本**：
+1.  电脑`Win+R`，输入`%UserProfile%`
+2.  会打开一个目录，在该目录下创建文件，名为`.wslconfig`
+3.  使用文本编辑器打开这个文件，粘贴下面代码块的内容后保存
+```bash
+networkingMode=mirrored
+```
+4.  重启WSL2系统后启动Yunzai，再次尝试连接。
 
-            ![WSL2设置窗口](/image/setting.png)
+或者：
 
-            2. 将网络模式改为 `mirrored`，然后重启WSL2系统。
+1.  电脑`Win+S`，搜索`WSL Setting`，打开该应用。
 
-          如果仍然无法连接，或者提示不支持镜像模式网络，请看下面的通用方法。
+![WSL2设置窗口](/image/setting.png)
 
-          *   **WSL2的通用方法**：
-              1.  在WSL2系统的终端执行以下指令：
-                  ```bash
-                  ip route show | grep -i default | awk '{ print $3}'
-                  ```
-                  典型的输出可能是：
-                  ```
-                  172.30.96.1
-                  ```
-                  因此，在此示例中，`172.30.96.1`就是我们需要配置的地址。
+2. 将网络模式改为 `mirrored`，然后重启WSL2系统。
 
-                  比如原来是`ws://127.0.0.1:3939`，现在就是`ws://172.30.96.1:3939`
+如果仍然无法连接，或者提示不支持镜像模式网络，请看下面的通用方法。
 
-                > [!warning] ⚠️警告
-                > 再警告一遍！地址不要照抄！！！这个地址是演示用的！实际需要根据你自己的配置进行配置！直接照抄一般用不了！
+*   **WSL2的通用方法**：
+1.  在WSL2系统的终端执行以下指令：
+```bash
+ip route show | grep -i default | awk '{ print $3}'
+```
+典型的输出可能是：
+```
+172.30.96.1
+```
+因此，在此示例中，`172.30.96.1`就是我们需要配置的地址。
 
-              更多关于WSL的信息请看[这里](https://learn.microsoft.com/zh-cn/windows/wsl/networking#identify-ip-address)
+比如原来是`ws://127.0.0.1:3939`，现在就是`ws://172.30.96.1:3939`
+
+> [!warning]
+> 再警告一遍！地址不要照抄！！！这个地址是演示用的！实际需要根据你自己的配置进行配置！直接照抄一般用不了！
+
+更多关于WSL的信息请看[这里](https://learn.microsoft.com/zh-cn/windows/wsl/networking#identify-ip-address)
 
 2.  **如果你的Yunzai和Napcat不在同一个设备：**
 
@@ -255,15 +272,15 @@ yarn install
 如果在之前配置 `WebSocket 服务器` 时输入了 token，请取消配置文件里 `accessToken` 的注释，并将"your token"编辑为你在 WebSocket 服务器配置的 token。
 
 比如原来是：
-```bash
+```yaml
 # Token
-# accessToken:"your token"
+# accessToken: "your token"
 ```
 
 更改完之后是：
-```bash
+```yaml
 # Token
-accessToken:"你实际的Token"
+accessToken: "你实际配置的Token"
 ```
 
 :::danger
@@ -274,11 +291,16 @@ accessToken:"你实际的Token"
 如果你会配置局域网/组网，那么这是您的首选，因为更安全
 :::
 
- *  如果配置完上面的适配器，不想再使用ICQQ了：
+* 如果配置完上面的适配器，不想再使用ICQQ了：
 
-    打开 Yunzai 根目录下的 config/config/bot.yaml，将 skip_login: false 改为 skip_login: true（大约在第 32 行）。 
+打开 Yunzai 根目录下的 config/config/bot.yaml<br>
+将 skip_login: false 改为 skip_login: true（大约在第 32 行）。 
 
-    这里配置的作用是跳过ICQQ登录，直接使用适配器连接。
+```yaml
+skip_login: true
+```
+
+这里配置的作用是跳过ICQQ登录，直接使用适配器连接。
 
 4. 重启 Yunzai 后即可享用
 
@@ -288,7 +310,7 @@ accessToken:"你实际的Token"
 
 若你的问题不在“疑难解答”内，你可以询问AI，也可以加入[官方群聊](https://qm.qq.com/q/WuYpKfgWYw)询问，等待好心人给你解答。
 
-例如下面的Deepwiki：
+例如下面的Deepwiki<Tooltip>由AI驱动的GitHub仓库百科，可以向AI询问仓库的内容</Tooltip>：
 
 * [DeepWiki Miao-Yunzai](https://deepwiki.com/yoimiya-kokomi/Miao-Yunzai)
 * [DeepWiki Napcat-Adapter](https://deepwiki.com/qiannqq/napcat-adapter)
