@@ -1,11 +1,11 @@
-# 关于发送大文件的方法
+# 关于发送文件的方法
 
 * WebSocket 支持小文件（图片、视频、音频、文件等任何形式的数据）传输，但单帧最大为 16MB，因此文件传输大小被限制为 10MB。超过 10MB 的文件将调用Bot.uploadFile尝试上传并获取URL，若Bot.uploadFile不存在则直接让 NapCat 读取本地文件。
 * 如果有大文件传输需求，请确保 NapCat.OneBot 可以访问 Yunzai 的目录，因使用绝对路径，需让 NapCat.OneBot 访问的路径与真实路径一致。   
 
 ## 对于在同一个设备上的
 
-1. Docker
+### 1. Docker
 
 :::details 1Panel
 > 修改之后会重启容器，请注意数据保存！
@@ -17,7 +17,8 @@
 :::
 
 ::: details 宝塔面板
-> 此面板可能会出现修改错误的问题，未必百分百成功   
+> 此面板可能会出现修改错误的问题，未必百分百成功
+>   
 > 修改之后会重启容器，请注意数据保存！
 
 登录面板后，点击左侧“Docker”，再点击“容器”，找到当前使用的 NapCat 容器，点击“管理”。
@@ -33,12 +34,12 @@
 ![表情](/image/cd.jpg)
 :::
 
-2. Windows
+### 2. Windows
 :::tip
 一般来说，Windows 下的 Yunzai 和 NapCat.OneBot 目录一致，无需额外配置。
 :::
 
-3. Android Termux
+### 3. Termux
 
 :::details tmoe Chroot 容器
 
@@ -57,27 +58,40 @@ exit
 
 ## 对于 完全不在同一设备/WSL
 
-部署到 NapCat 和 Yunzai 都能访问的服务器
-```bash
+方案A 使用Lain-drive
+
+1. 下载Lain-drive
+
+::: code-group
+```bash [独立于Yunzai]
+# 请另外寻找一个目录来安装
 git clone https://gitee.com/qiannqq/Lain-drive.git
-# 如果要将Lain-drive作为插件安装在Yunzai中，跟随Yunzai启动，则使用以下指令（请手动去掉#注释）
-# git clone --depth=1 https://gitee.com/qiannqq/Lain-drive.git ./plugins/Lain-drive
 ```
-安装 Lain-drive 依赖
+
+```bash [作为Yunzai插件使用]
+# Yunzai 根目录执行
+git clone --depth=1 https://gitee.com/qiannqq/Lain-drive.git ./plugins/Lain-drive
+```
+:::
+
+2. 安装 Lain-drive 依赖
 ```bash
 pnpm i
 ```
-启动指令
+
+3. 启动指令
 ```bash
 node .
 ```
-启动后，在 config/config.yaml 修改服务器地址为 NapCat 可访问的地址
-在 Yunzai 安装该插件
+启动后，在 Lain-drive/config/config.yaml 修改服务器地址为 NapCat 可访问的地址
+
+4. 在 Yunzai 安装该插件
 ```bash
 curl -o "./plugins/example/大文件上传.js" "https://gitee.com/qiannqq/yunzai-plugin-JS/raw/master/JS/uploadFile.js"
 ```
 编辑插件中 IP 地址为你部署 Lain-drive 的地址
-在 Yunzai 根目录安装依赖
+
+5. 在 Yunzai 根目录安装依赖
 ```bash
 pnpm i node-fetch -w
 ```
@@ -85,7 +99,7 @@ pnpm i node-fetch -w
 
 ## Other 其他方案
 :::warning
-此方案仅适用于有代码功底或会熟练运用AI写代码的用户
+此方案仅适用于有代码功底/会熟练运用AI写代码的用户
 :::
 
 * 为了实现大文件发送，我给Bot添加了一个uploadFile的函数<br>
