@@ -12,7 +12,7 @@ hero:
       link: introduction
     - theme: alt
       text: 安装
-      link: get-started
+      link: install
     - theme: alt
       text: 加入官方群聊
       link: "https://qm.qq.com/q/WuYpKfgWYw"

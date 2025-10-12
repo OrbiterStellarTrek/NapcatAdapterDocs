@@ -101,4 +101,4 @@ flowchart TD
 
 <br>
 
-[出发！](/get-started)
+[出发！](/install)
