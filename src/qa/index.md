@@ -4,19 +4,21 @@
 
 为了更快地定位并解决你的问题，请先按照如下操作进行：
 
-1. 阅读[安装与配置](../install)并确保自己已经按照指示操作，保存所有的配置文件，确保Napcat-Adapter已是最新，重启Yunzai和Napcat再次尝试问题是否出现。有可能你只是没有看全教程，或者配置没有保存导致插件读取不到配置导致错误。
+1. 阅读[安装与配置](../install)并确保自己已经按照指示操作，保存所有的配置文件，确保Napcat-Adapter已是最新<Tooltip>使用指令：#nc更新</Tooltip>，重启Yunzai和Napcat再次尝试问题是否出现。有可能你只是没有看全教程，或者配置没有保存导致插件读取不到配置导致错误。
 
 2. 阅读下面的常见问题与解答，确保你遇到的问题没有被说明。
 
 3. 阅读[issue](https://gitee.com/qiannqq/napcat-adapter/issues?q=is%3Aall)，查看是否有人和你有同样的问题。
 
-4. 如果以上步骤都不能解决，请带上报错日志和报错聊天截图，确保涉及插件已是最新，然后[提出issue](https://gitee.com/qiannqq/napcat-adapter/issues/new/choose)或者去[官方群聊](https://qm.qq.com/q/WuYpKfgWYw)寻求帮助。
+4. 如果以上步骤都不能解决，请带上报错日志和报错聊天截图，确保涉及插件已是最新，然后[提出issue](https://gitee.com/qiannqq/napcat-adapter/issues/new/choose)或者去[官方群聊](https://qm.qq.com/q/WuYpKfgWYw)<Tooltip>注意这是Napcat-Adapter的用户群而并非其他插件用户群</Tooltip>寻求帮助。
 
 :::details 【提问速通】
-如果你想获得最快最优解决方案   
+
+如果你想获得最快最优解决方案
+
 请确保：
 1. 提问时请带上报错日志和报错聊天截图
-2. 请确保涉及插件/Napcat/Napcat-Adapter已是最新（使用指令：`#nc更新`）
+2. 请确保涉及插件/Napcat/Napcat-Adapter<Tooltip>使用指令：#nc更新</Tooltip>已是最新
 3. 请确保提问时带上相关截图（例如访问不了请提供浏览器访问时的截图）
 4. 请确保避免无用提问（“我这个到底怎么解决？”“怎么办？”），请这样提问：“我想要xxx，但是这个功能产生了这样的报错（附上日志截图和聊天截图）”   
 ⚠️请你记住，没有任何人有义务为你免费解答
@@ -36,7 +38,7 @@
 
 答：此为Napcat方面的问题，本文档只涉及Napcat-Adapter的安装配置和Napcat方面的部分配置，没有能力也没有义务来解答此类问题。
 
-请参阅[Napcat的文档](https://napneko.github.io/)获取此方面的帮助。
+请参阅[Napcat的文档](https://napneko.github.io/config/basic)获取此方面的帮助。
 
 ## 问： 适配器日志只提示初始化，没有连接（或者断断续续的连接）
 
@@ -85,4 +87,26 @@
 
 ## 问： Napcat-Adapter（本适配器）可以连接其他协议端吗？比如LLOneBot、Lgr（拉格兰）
 
-答： Napcat-Adapter（本适配器）使用 `node-napcat-ts` 作为连接Napcat的方式，并且基于Napcat进行高度兼容，因此无法连接除Napcat外的任何协议端，即便其同为`OneBotv11`协议，如果你有需要，建议使用 TRSS-Yunzai 并使用其 Onebotv11 适配器连接。
+答： Napcat-Adapter（本适配器）使用 `node-napcat-ts` 作为连接Napcat的方式，并且基于Napcat进行高度兼容，因此无法连接除Napcat外的任何协议端，即便其同为`OneBotv11`协议，如果你有需要，建议使用 TRSS-Yunzai 并使用其 Onebotv11 适配器连接。[点我传送到 TRSS-Yunzai](https://gitee.com/TimeRainStarSky/Yunzai#%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B)
+
+## 问：日志出现 `TLS connection ……` ，不能正常使用
+
+```log
+11-4 5:14:19 [error] Bot | 发生错误 Error: Client network socket disconneted before secure TLS connection was established
+  at TLSSocket.onConnectEnd (node:_tls_wrap:1730:19)
+  at TLSSocket.emit (node:events:530:35)
+  at endReadableNT (node:internal/streams/readable:1698:12)
+  at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+```
+
+答：
+1. 请检查 `config/config/cfg.yaml` 配置文件是否正确，是否使用 `ws://` 而并非 `wss://`
+
+```yaml
+# ws地址
+baseUrl: "ws://127.0.0.1:3001"
+```
+
+2. 请检查配置完毕之后有没有重启云崽
+
+3. 请检查Napcat相关配置是否正确，详见[安装与配置](../install#%E9%85%8D%E7%BD%AE-napcat)
