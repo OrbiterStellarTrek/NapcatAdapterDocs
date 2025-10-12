@@ -90,8 +90,9 @@ Linux云服务器请先在云服务器厂商安全组<Tooltip>可能叫做防火
 ![WebUI](/image/webconfig1.png)
 
 随后按照如图所示填写配置。
-:::danger
-**跨设备公网WebSocket连接，请务必配置连接Token！**
+
+:::warning
+注意！新版Napcat默认监听127.0.0.1，如果你是Shell安装的，无需理会，Docker安装的请使用0.0.0.0
 ::: 
 
 ![WebUIConfig2](/image/webconfig2.png)
@@ -145,7 +146,9 @@ yarn install
 
 3. 配置修改
 
-如果你是Shell安装的Napcat，使用默认的端口和 `0.0.0.0` 作为服务器的地址，那么直接启动Yunzai应该即可正常使用，如果不行，请尝试下面的步骤：
+如果你是Shell安装的Napcat，使用默认的端口和 `0.0.0.0` 作为服务器的地址，那么直接启动Yunzai应该即可正常使用
+
+如果不行，请尝试下面的步骤：
 
 安装适配器后启动一次Yunzai，然后
 
