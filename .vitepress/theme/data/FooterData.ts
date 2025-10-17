@@ -2,14 +2,14 @@ import type { FooterData } from '@theojs/lumen'
 
 export const Footer_Data: FooterData = {
   beian: {
-    showIcon: true,
+    showIcon: false,
     icp: {
       icon: {
         light: 'fluent:globe-shield-48-filled',
         dark: 'fluent:globe-shield-48-filled',
         color: { light: 'rgba(20, 150, 255, 1)', dark: 'rgba(100, 200, 255, 1)' }
       },
-      number: '沪ICP备2024094132号-8',
+      number: '',
       rel: 'noopener noreferrer'
     },
   },
