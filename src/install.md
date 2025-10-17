@@ -311,7 +311,7 @@ skip_login: true
 
 你可能需要[疑难解答](qa/)
 
-若你的问题不在“疑难解答”内，你可以询问AI，也可以加入[官方群聊](https://qm.qq.com/q/WuYpKfgWYw)询问，等待好心人给你解答。
+若你的问题不在“疑难解答”内，你可以询问AI，也可以加入[Napcat-Adapter官方群聊](https://qm.qq.com/q/WuYpKfgWYw)询问，等待好心人给你解答。
 
 例如下面的Deepwiki<Tooltip>由AI驱动的GitHub仓库百科，可以向AI询问仓库的内容</Tooltip>：
 
