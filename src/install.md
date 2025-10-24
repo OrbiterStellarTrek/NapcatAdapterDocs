@@ -1,30 +1,28 @@
 # 安装与配置
 
-:::warning
-由于Napcat更新频繁，该文档的一些内容可能已经过时，请留意
-:::
-
 :::tip
 虽然笔者不希望你提问出本文档已经包含回答的问题，但是我估计你也不会听。
 
 所以如果有什么问题，欢迎加入[Napcat-Adapter官方群](https://qm.qq.com/q/WuYpKfgWYw)
 
-开发者没有耐心对每个问题一一解释详细回复，所以本文档已经包含回答的问题没人回概不负责。
+开发者没有义务 & 没有耐心对每个问题一一解释详细回复，所以本文档已经包含回答的问题没人回概不负责。
 
-又或者可以直接寻找代搭建，并把这个文档扔给TA，让TA帮你安装并配置这个插件。
+你可以直接寻找代搭建，并把这个文档扔给TA，让TA帮你安装并配置这个插件。
 
 亦或是把这个文档扔给AI，让AI一步一步教你怎么弄。
 :::
 
 :::warning
-1.本适配器原意是提供给Miao-Yunzai钉子户所使用，虽然TRSS-Yunzai也可以使用本适配器，但如果你分不清Miao-Yunzai和TRSS-Yunzai，正向WS和反向WS的区别，那建议去使用TRSS-Yunzai自带的OneBotv11适配器。
+1. 本适配器原意是提供给Miao-Yunzai钉子户所使用（所以对于Miao-Yunzai的框架适配比较好），虽然TRSS-Yunzai也可以使用本适配器，但如果你分不清Miao-Yunzai和TRSS-Yunzai，正向WS和反向WS的区别，那建议去使用[TRSS-Yunzai](https://gitee.com/TimeRainStarSky/Yunzai#%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B)自带的OneBotv11适配器。
 
-2.[Napcat-Adapter官方群](https://qm.qq.com/q/WuYpKfgWYw)不是Napcat的官方群，更不是Miao-Yunzai和TRSS-Yunzai的官方群。
+2. [Napcat-Adapter官方群](https://qm.qq.com/q/WuYpKfgWYw)不是Napcat的官方群，更不是Miao-Yunzai和TRSS-Yunzai的官方群。
 
-和Napcat-Adapter无关的问题请勿进入群进行提问。
+和Napcat-Adapter无关的问题请勿进入群进行提问，因为这个被骂那就是你的问题了。
 :::
 
 ## 事先准备
+
+~~这还用说吗~~
 
 1. Yunzai
 2. Napcat
@@ -33,16 +31,16 @@
 
 ### Windows系统安装 任选其一即可
 
-* [Windows 一键启动](https://napneko.github.io/guide/boot/Shell#napcat-win-%E4%B8%80%E9%94%AE%E7%89%88%E6%9C%AC) <Badge type="tip" text="推荐" />
+* [Windows 一键启动](https://napcat.napneko.icu/guide/boot/Shell#napcat-win-%E4%B8%80%E9%94%AE%E7%89%88%E6%9C%AC) <Badge type="tip" text="推荐" />
 
-* [Windows 手动安装](https://napneko.github.io/guide/boot/Shell#napcat-shell-win-%E6%89%8B%E5%8A%A8%E5%90%AF%E5%8A%A8%E6%95%99%E7%A8%8B)
+* [Windows 手动安装](https://napcat.napneko.icu/guide/boot/Shell#napcat-shell-win-%E6%89%8B%E5%8A%A8%E5%90%AF%E5%8A%A8%E6%95%99%E7%A8%8B)
 
-* [Windows 桌面软件](https://napneko.github.io/guide/boot/Shell#napcat-windows-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7)
+* [Windows 桌面软件](https://napcat.napneko.icu/guide/boot/Shell#napcat-windows-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7)
 
 ### Linux系统安装 任选其一即可 <Badge type="tip" text="推荐" />
 
-* [Shell安装](https://napneko.github.io/guide/boot/Shell#napcat-installer-linux-%E4%B8%80%E9%94%AE%E4%BD%BF%E7%94%A8%E8%84%9A%E6%9C%AC-%E6%94%AF%E6%8C%81ubuntu-20-debian-10-centos9) <Badge type="info" text="无需多开的情况" />
-* [Docker安装](https://napneko.github.io/guide/boot/Shell#napcat-docker-linux%E5%AE%B9%E5%99%A8%E5%8C%96%E9%83%A8%E7%BD%B2) <Badge type="info" text="适合多开账号的" />
+* [Shell安装](https://napcat.napneko.icu/guide/boot/Shell#napcat-installer-linux-%E4%B8%80%E9%94%AE%E4%BD%BF%E7%94%A8%E8%84%9A%E6%9C%AC-%E6%94%AF%E6%8C%81ubuntu-20-debian-10-centos9) <Badge type="info" text="无需多开的情况" />
+* [Docker安装](https://napcat.napneko.icu/guide/boot/Shell#napcat-docker-linux%E5%AE%B9%E5%99%A8%E5%8C%96%E9%83%A8%E7%BD%B2) <Badge type="info" text="适合多开账号的" />
 
 **如果你的电脑/服务器只支持WSL1，请使用Shell安装。<Tooltip>WSL2无此限制</Tooltip>**
 * 如果你的Yunzai是使用容器化部署(如trss.me)，若无多开需求请使用Shell部署，使用Docker部署Napcat需要注意网络桥接问题，如有出现问题（比如各种连接不上、连接无响应）请自行解决。
@@ -64,13 +62,27 @@
 
 首先需要按照下面的步骤打开一个Websocket服务器让Adapter连接。
 
-::: warning
-本适配器的工作模式为 `正向 WS 连接` （即 Adapter 连接到 Napcat ），请确保 `Adapter` 可以正常访问 `NapCat` 所提供的 IP 和端口。
+启动Napcat，打开浏览器，进入你的Napcat Webui
+
+临时登录密钥获取方式：<br>
+打开Napcat的日志，然后找到下面的内容
+
+```log{5}
+10-24 20:15:31 [info] [NapCat] [Core] NapCat.Core Version: 4.8.113
+[26][54257536]LongTask(2): duration=1071ms, container=Browser
+10-24 20:15:31 [info] [NapCat] [WebUi] ✅ 当前使用安全密码
+10-24 20:15:31 [info] [NapCat] [WebUi] 🔑 已缓存启动时的token用于鉴权，运行时手动修改配置文件密码将不会生效
+10-24 20:15:31 [info] [NapCat] [WebUi] 🔑 token=1145141919810 // [!code focus]
+10-24 20:15:31 [info] [NapCat] [WebUi] WebUi User Panel Url: http://127.0.0.1:6099/webui?token=1145141919810
+10-24 20:15:31 [info] [NapCat] [WebUi] WebUi User Panel Url: http://0.0.0.0:6099/webui?token=1145141919810
+```
+这里的 `Token=` 后面的内容 `1145141919810` 就是临时的登录密钥
+
+:::danger
+<font size="5">登录后请立刻马上修改密码！！！！！！！！！！！！！</font>
+![修改密码示意图](/image/change-passwd.png)
+<font size="5">否则你的Bot将会有被盗号甚至封号的风险！！！！！！</font>
 :::
-
-启动Napcat，打开浏览器，进入你的Napcat Webui<Tooltip>默认密钥napcat</Tooltip>
-
-Napcat Webui的默认端口是6099。<Tooltip>例如你在Win上启动Napcat，那么访问地址一般就是127.0.0.1:6099</Tooltip>
 
 ::: warning
 如果你的端口6099暴露在公网中，请务必修改登录密码！
@@ -92,13 +104,16 @@ Linux云服务器请先在云服务器厂商安全组<Tooltip>可能叫做防火
 随后按照如图所示填写配置。
 
 :::warning
-注意！新版Napcat默认监听127.0.0.1，如果你是Shell安装的，无需理会，Docker安装的请使用0.0.0.0
+注意！新版Napcat默认监听127.0.0.1<br>
+如果你是Shell安装的，无需理会<br>
+Docker安装的请使用0.0.0.0
 ::: 
 
 ![WebUIConfig2](/image/webconfig2.png)
 
 :::danger
-**跨设备公网WebSocket连接，请务必配置连接Token！**
+<font size="5">请配置Token！！！！！！！！！</font><br>
+<font size="5">否则你的Bot将会有被盗号甚至封号的风险！！！！！！</font>
 :::
 
 完成后记得**保存！保存！并启用！**
@@ -153,18 +168,16 @@ yarn install
 安装适配器后启动一次Yunzai，然后
 
 ::: code-group
-```console [对于新手/不会改文件的]
+```yaml [对于新手/不会改文件的]
 使用锅巴配置即可
 ```
 
-```bash [对于会翻文件并改文件的]
-打开插件根目录下的 `config/config/cfg.yaml`
-
-编辑 baseUrl 地址为127.0.0.1（一般不用改，如果连接不上请看下面的折叠部分）
-前面加上“ws://”，后面加上你在 `Napcat Webui` 指定的端口号。
+```yaml [对于会翻文件并改文件的]{4}
+# 文件目录 napcat-adapter/config/config/cfg.yaml
 
 # ws地址
 baseUrl: "ws://127.0.0.1:3001" # << 修改这里
+```
 :::
 
 :::details 什么，你不知道怎么配置？或者连接失败
@@ -277,17 +290,13 @@ ip route show | grep -i default | awk '{ print $3}'
 比如原来是：
 ```yaml
 # Token
-# accessToken: "your token"
-```
-
-更改完之后是：
-```yaml
-# Token
-accessToken: "你实际配置的Token"
+# accessToken: "your token" // [!code --]
+accessToken: "你实际配置的Token" // [!code ++]
 ```
 
 :::danger
-**跨设备公网WebSocket连接，请务必配置连接Token！**
+<font size="5">请配置Token！！！！！！！！！</font><br>
+<font size="5">否则你的Bot将会有被盗号甚至封号的风险！！！！！！</font>
 :::
 
 :::tip
@@ -299,8 +308,24 @@ accessToken: "你实际配置的Token"
 打开 Yunzai 根目录下的 config/config/bot.yaml<br>
 将 skip_login: false 改为 skip_login: true（大约在第 32 行）。 
 
-```yaml
+```yaml{6-7}
+# 上线时给首个主人QQ推送帮助
+online_msg: true
+# 上线推送通知的冷却时间
+online_msg_exp: 86400
+
+# 是否跳过登录ICQQ
 skip_login: true
+
+# 是否启用串行加载插件
+serial_load: false
+
+# 签名API地址(如:http://127.0.0.1:8080/sign?key=114514)
+sign_api_addr:
+# 传入的QQ版本(如:8.9.63、8.9.68)
+ver:
+# 滑动验证自动获取ticket API地址
+slider_ticket_addr: https://HanXuan-GT.HF.Space/captcha/slider
 ```
 
 这里配置的作用是跳过ICQQ登录，直接使用适配器连接。

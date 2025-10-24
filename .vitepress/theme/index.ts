@@ -2,8 +2,7 @@
 import { h } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
-import Tooltip from './vue/Tooltip.vue'
-import './custom.css'
+
 import { 
   NolebaseEnhancedReadabilitiesMenu, 
   NolebaseEnhancedReadabilitiesScreenMenu, 
@@ -19,6 +18,10 @@ import { Footer_Data } from './data/FooterData.ts'
 import "asciinema-player/dist/bundle/asciinema-player.css";
 import 'virtual:group-icons.css' //代码组样式
 import '@nolebase/vitepress-plugin-enhanced-readabilities/client/style.css'
+import './custom.css'
+
+import Tooltip from './vue/Tooltip.vue'
+import switch_light_dark from './vue/switch-light-dark.vue'
 
 export default {
   extends: DefaultTheme,
@@ -58,7 +61,7 @@ export default {
   },
   Layout: () => {
     // 保留原有组件的同时添加footer插槽
-    return h(DefaultTheme.Layout, null, {
+    return h(switch_light_dark, null, {
       'nav-bar-content-after': () => h(NolebaseEnhancedReadabilitiesMenu),
       'nav-screen-content-after': () => h(NolebaseEnhancedReadabilitiesScreenMenu),
       'layout-bottom': () => h(Footer, { Footer_Data })
