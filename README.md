@@ -38,6 +38,3 @@ pnpm docs:build
 ```
 
 贡献请使用[PR](https://github.com/OrbiterStellarTrek/NapcatAdapterDocs/compare)
-
-本站已制作自动构建并发布的自动化脚本，您无需构建页面，只需要修改源文件即可
-
