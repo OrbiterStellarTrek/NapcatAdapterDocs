@@ -2,7 +2,6 @@
 import { h } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
-import Confetti from "./vue/Confetti.vue";
 import Tooltip from './vue/Tooltip.vue'
 import './custom.css'
 import { 
@@ -66,7 +65,6 @@ export default {
     })
   },
   enhanceApp({ app, router, siteData }) {
-    app.component("Confetti", Confetti);
     app.component('Tooltip', Tooltip) // Tooltip
     app.component("NuAsciinemaPlayer", NuAsciinemaPlayer);
   }

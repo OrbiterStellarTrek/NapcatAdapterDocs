@@ -33,5 +33,3 @@ features:
     details: 连接Napcat不再是TRSS-Yunzai的专利，兼容性甚至更强
 
 ---
-
-<Confetti />
