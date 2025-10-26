@@ -80,13 +80,10 @@
 
 :::danger
 <font size="5">登录后请立刻马上修改密码！！！！！！！！！！！！！</font>
-![修改密码示意图](/image/change-passwd.png)
 <font size="5">否则你的Bot将会有被盗号甚至封号的风险！！！！！！</font>
 :::
 
-::: warning
-如果你的端口6099暴露在公网中，请务必修改登录密码！
-:::
+![修改密码示意图](/image/change-passwd.png)
 
 Linux云服务器请先在云服务器厂商安全组<Tooltip>可能叫做防火墙</Tooltip>和服务器管理面板（比如宝塔）按照如下放行（没有则忽略）
 
@@ -295,7 +292,7 @@ accessToken: "你实际配置的Token" // [!code ++]
 ```
 
 :::danger
-<font size="5">请配置Token！！！！！！！！！</font><br>
+<font size="5">请配置Token！！！！！！！！！</font>
 <font size="5">否则你的Bot将会有被盗号甚至封号的风险！！！！！！</font>
 :::
 
@@ -315,7 +312,8 @@ online_msg: true
 online_msg_exp: 86400
 
 # 是否跳过登录ICQQ
-skip_login: true
+skip_login: false // [!code --]
+skip_login: true // [!code ++]
 
 # 是否启用串行加载插件
 serial_load: false
