@@ -65,7 +65,7 @@ exit
 ::: code-group
 ```bash [独立于Yunzai]
 # 请另外寻找一个目录来安装
-git clone https://gitee.com/qiannqq/Lain-drive.git
+git clone --depth=1 https://gitee.com/qiannqq/Lain-drive.git
 ```
 
 ```bash [作为Yunzai插件使用]
