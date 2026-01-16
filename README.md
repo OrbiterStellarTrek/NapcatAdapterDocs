@@ -8,6 +8,7 @@
 
 > [!TIP]
 > 建议直接使用文档下方的“在 GitHub 上编辑此页”
+> 或者使用GitHub DeskTop
 
 > [!TIP]
 > 本文档集成了一个Tooltip的组件，只需要像使用HTML标签那样使用即可   
