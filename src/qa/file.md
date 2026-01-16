@@ -11,9 +11,9 @@
 > 修改之后会重启容器，请注意数据保存！
 
 登录面板后，点击左侧“容器”，找到当前使用的 NapCat 容器，点击“编辑”。
-![1Panel-1](/image/docker-1p1.png)
+![1Panel-1](/image/file/docker-1p1.png)
 找到目录挂载，添加一个，左侧选择本机目录（云崽所在绝对路径），右侧容器目录填写相同路径。
-![1Panel-2](/image/docker-1p2.png)
+![1Panel-2](/image/file/docker-1p2.png)
 :::
 
 ::: details 宝塔面板
@@ -22,16 +22,47 @@
 > 修改之后会重启容器，请注意数据保存！
 
 登录面板后，点击左侧“Docker”，再点击“容器”，找到当前使用的 NapCat 容器，点击“管理”。
-![BT-1](/image/docker-bt1.jpg)
+![BT-1](/image/file/docker-bt1.jpg)
 在“更多设置”中添加“挂载/映射”，选择本机目录（云崽所在绝对路径），右侧容器目录填写相同路径。
-![BT-2](/image/docker-bt2.jpg)
+![BT-2](/image/file/docker-bt2.jpg)
 保存容器配置即可。
-![BT-3](/image/docker-bt3.jpg)
+![BT-3](/image/file/docker-bt3.jpg)
+:::
+
+
+:::details GMSSH
+> 修改之后会重启容器，请注意数据保存！
+
+登录桌面后点击“实用工具”
+![GMSSH-1](/image/file/gmssh.png)
+
+点击左侧“容器”，找到现在使用中的Napcat容器，然后点击编辑
+![GMSSH-2](/image/file/gmssh-2.png)
+
+点击“挂载”
+![GMSSH-3](/image/file/gmssh-3.png)
+本地目录填写Yunzai所在目录（绝对目录），容器目录需保持一致，权限只读和读写一样
+:::
+
+:::details fnOS
+> 修改之后会重启容器，请注意数据保存！
+
+1. 登录到fnOS WEB控制台   
+2. 打开桌面的“Docker”
+3. 点击左侧容器，找到现在使用的Napcat容器
+4. 点击三点，详情
+
+![fnOS](/image/file/fnos.png)
+
+5. 找到“设置”选项
+6. 找到“储存位置”
+7. 输入对应的Yunzai路径（fnOS是选择路径，注意选择位置区别！），注意右侧容器目录也要相同，权限只读和读写一样
+![fnOS-2](/image/file/fnos-2.png)
 :::
 
 :::details 其他还在烧烤中
 都说了还在烧烤中看不到吗？
-![表情](/image/cd.jpg)
+![表情](/image/file/cd.jpg)
 :::
 
 ### 2. Windows

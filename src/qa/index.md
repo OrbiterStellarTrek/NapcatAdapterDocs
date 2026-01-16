@@ -24,7 +24,7 @@
 ⚠️请你记住，没有任何人有义务为你免费解答
 :::
 
->在提问之前，可以阅读[提问的智慧](https://lug.ustc.edu.cn/wiki/doc/smart-questions/#%E5%A3%B0%E6%98%8E)<Tooltip>本指南不提供此项目的实际支持服务！</Tooltip>，知晓高效的提问方法。
+>在提问之前，可以阅读[提问的智慧](https://lug.ustc.edu.cn/wiki/doc/smart-questions/#%E5%A3%B0%E6%98%8E)<Tooltip>这个指南不提供适配器的实际支持服务，只教你怎么正确的提问</Tooltip>，知晓高效的提问方法。
 
 > **Troubleshooting any problem without the error log is like driving with your eyes closed.**
 >

@@ -31,16 +31,16 @@
 
 ### Windows系统安装 任选其一即可
 
-* [Windows 一键启动](https://napcat.napneko.icu/guide/boot/Shell#napcat-win-%E4%B8%80%E9%94%AE%E7%89%88%E6%9C%AC) <Badge type="tip" text="推荐" />
+* [Windows 一键启动](https://napneko.github.io/guide/boot/Shell#napcat-win-%E4%B8%80%E9%94%AE%E7%89%88%E6%9C%AC) <Badge type="tip" text="推荐" />
 
-* [Windows 手动安装](https://napcat.napneko.icu/guide/boot/Shell#napcat-shell-win-%E6%89%8B%E5%8A%A8%E5%90%AF%E5%8A%A8%E6%95%99%E7%A8%8B)
+* [Windows 手动安装](https://napneko.github.io/guide/boot/Shell#napcat-shell-win-%E6%89%8B%E5%8A%A8%E5%90%AF%E5%8A%A8%E6%95%99%E7%A8%8B)
 
-* [Windows 桌面软件](https://napcat.napneko.icu/guide/boot/Shell#napcat-windows-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7)
+* [Windows 桌面软件](https://napneko.github.io/guide/boot/Shell#napcat-windows-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7)
 
 ### Linux系统安装 任选其一即可 <Badge type="tip" text="推荐" />
 
-* [Shell安装](https://napcat.napneko.icu/guide/boot/Shell#napcat-installer-linux-%E4%B8%80%E9%94%AE%E4%BD%BF%E7%94%A8%E8%84%9A%E6%9C%AC-%E6%94%AF%E6%8C%81ubuntu-20-debian-10-centos9) <Badge type="info" text="无需多开的情况" />
-* [Docker安装](https://napcat.napneko.icu/guide/boot/Shell#napcat-docker-linux%E5%AE%B9%E5%99%A8%E5%8C%96%E9%83%A8%E7%BD%B2) <Badge type="info" text="适合多开账号的" />
+* [Shell安装](https://napneko.github.io/guide/boot/Shell#napcat-installer-linux-%E4%B8%80%E9%94%AE%E4%BD%BF%E7%94%A8%E8%84%9A%E6%9C%AC-%E6%94%AF%E6%8C%81ubuntu-20-debian-10-centos9) <Badge type="info" text="无需多开的情况" />
+* [Docker安装](https://napneko.github.io/guide/boot/Shell#napcat-docker-linux%E5%AE%B9%E5%99%A8%E5%8C%96%E9%83%A8%E7%BD%B2) <Badge type="info" text="适合多开账号的" />
 
 **如果你的电脑/服务器只支持WSL1，请使用Shell安装。<Tooltip>WSL2无此限制</Tooltip>**
 * 如果你的Yunzai是使用容器化部署(如trss.me)，若无多开需求请使用Shell部署，使用Docker部署Napcat需要注意网络桥接问题，如有出现问题（比如各种连接不上、连接无响应）请自行解决。
@@ -51,9 +51,7 @@
 ## 配置 Napcat
 
 ::: danger
-请勿将 Napcat 的 WebSocket 服务端接口暴露在公网！
-
-近期出现针对使用 OneBot 协议的机器人的端口扫描与恶意攻击（例如发送不当言论等）。
+请勿将 Napcat 的 WebSocket 服务端接口暴露在公网！若暴露在公网可能会遭到针对使用 OneBot 协议的机器人的端口扫描与恶意攻击（例如发送不当言论等）。
 
 若您的服务端接口已公开在公网，请务必通过防火墙（适用于 Linux Shell安装的Napcat）或在云服务器控制台设置安全组（适用于 Linux Docker安装的Napcat）进行防护。
 
@@ -78,12 +76,10 @@
 ```
 这里的 `Token=` 后面的内容 `1145141919810` 就是临时的登录密钥
 
-:::danger
-<font size="5">登录后请立刻马上修改密码！！！！！！！！！！！！！</font>
-<font size="5">否则你的Bot将会有被盗号甚至封号的风险！！！！！！</font>
-:::
-
+:::tip
+若要修改WebUI Token可前往下图修改
 ![修改密码示意图](/image/change-passwd.png)
+:::
 
 Linux云服务器请先在云服务器厂商安全组<Tooltip>可能叫做防火墙</Tooltip>和服务器管理面板（比如宝塔）按照如下放行（没有则忽略）
 
@@ -100,7 +96,7 @@ Linux云服务器请先在云服务器厂商安全组<Tooltip>可能叫做防火
 
 随后按照如图所示填写配置。
 
-:::warning
+:::tip
 注意！新版Napcat默认监听127.0.0.1<br>
 如果你是Shell安装的，无需理会<br>
 Docker安装的请使用0.0.0.0
@@ -108,16 +104,9 @@ Docker安装的请使用0.0.0.0
 
 ![WebUIConfig2](/image/webconfig2.png)
 
-:::danger
-<font size="5">请配置Token！！！！！！！！！</font><br>
-<font size="5">否则你的Bot将会有被盗号甚至封号的风险！！！！！！</font>
-:::
-
 完成后记得**保存！保存！并启用！**
 
 ## 安装适配器
-
-点击播放直接看动画版安装过程
 
 <NuAsciinemaPlayer
   src="asciinema/gitee-install.cast"
@@ -167,6 +156,7 @@ yarn install
 ::: code-group
 ```yaml [对于新手/不会改文件的]
 使用锅巴配置即可
+注：需要先禁用icqq登录才会加载插件，然后前往锅巴面板来修改，具体登录过程不再赘述
 ```
 
 ```yaml [对于会翻文件并改文件的]{4}
@@ -290,11 +280,6 @@ ip route show | grep -i default | awk '{ print $3}'
 # accessToken: "your token" // [!code --]
 accessToken: "你实际配置的Token" // [!code ++]
 ```
-
-:::danger
-<font size="5">请配置Token！！！！！！！！！</font>
-<font size="5">否则你的Bot将会有被盗号甚至封号的风险！！！！！！</font>
-:::
 
 :::tip
 如果你会配置局域网/组网，那么这是您的首选，因为更安全
