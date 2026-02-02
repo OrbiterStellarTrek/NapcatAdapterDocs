@@ -50,6 +50,12 @@
 
 （如果地址匹配上了但是还是连接不了，请检查NapCat和适配器是否在同一个网络环境，如果不是，请参阅[安装与配置](../install#%E9%85%8D%E7%BD%AE-napcat)配置适配器的部分）
 
+## 问：TRSS-Yunzai可以用这个插件吗？
+
+答：可以，但不推荐。对于TRSS-Yunzai仍有些兼容性问题，例如：[Issue-5 [Bug] 合并转发失败](https://github.com/qiannqq/napcat-adapter/issues/5#issuecomment-3808387324)。
+
+**TRSS-Yunzai更推荐使用自带的OneBotv11适配器**
+
 
 ## 问： 我的插件/Bot 日志出现以下报错，怎么办？
 
