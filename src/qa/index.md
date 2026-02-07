@@ -52,7 +52,7 @@
 
 ## 问：TRSS-Yunzai可以用这个插件吗？
 
-答：可以，但不推荐。对于TRSS-Yunzai仍有些兼容性问题，例如：[Issue-5 [Bug] 合并转发失败](https://github.com/qiannqq/napcat-adapter/issues/5#issuecomment-3808387324)。
+答：可以，但不推荐。对于TRSS-Yunzai仍有些兼容性问题，例如：[Issue-5 [Bug] 合并转发失败](https://github.com/qiannqq/napcat-adapter/issues/5#issuecomment-3808387324)。（该问题已修复）
 
 **TRSS-Yunzai更推荐使用自带的OneBotv11适配器**
 
